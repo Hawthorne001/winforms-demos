@@ -37,6 +37,7 @@ namespace SfNumericTextBoxDemo
             style.Add("Office2016Black");
             this.sfComboBox1.DataSource = style;
             this.sfComboBox1.SelectedIndex = 0;
+            this.sfComboBox1.AllowDropDownResize = false;
             this.ValidationTextBox.ValueChanged += ValidationTextBox_ValueChanged;
             this.ValidationTextBox.NumberFormatInfo = new System.Globalization.NumberFormatInfo() { NumberGroupSeparator = "", NumberDecimalDigits = 0};
         }

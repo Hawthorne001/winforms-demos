@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2012
+// Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -37,7 +37,6 @@ namespace SimpleDrillDown
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.diagram1 = new Syncfusion.Windows.Forms.Diagram.Controls.Diagram(this.components);
             this.model1 = new Syncfusion.Windows.Forms.Diagram.Model(this.components);
             this.model2 = new Syncfusion.Windows.Forms.Diagram.Model(this.components);
@@ -45,12 +44,6 @@ namespace SimpleDrillDown
             ((System.ComponentModel.ISupportInitialize)(this.model1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.model2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "undo.gif");
             // 
             // diagram1
             // 
@@ -60,7 +53,7 @@ namespace SimpleDrillDown
             this.diagram1.Location = new System.Drawing.Point(2, 72);
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(675, 394);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 1;
@@ -72,7 +65,7 @@ namespace SimpleDrillDown
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
             this.diagram1.View.Grid.Visible = false;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             // 
             // model1
             // 
@@ -125,7 +118,6 @@ namespace SimpleDrillDown
 
         #endregion
 
-        private System.Windows.Forms.ImageList imageList1;        
         private Syncfusion.Windows.Forms.Diagram.Controls.Diagram diagram1;
         private Syncfusion.Windows.Forms.Diagram.Model model1;
         private Syncfusion.Windows.Forms.Diagram.Model model2;

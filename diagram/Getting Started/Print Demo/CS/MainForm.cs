@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2007
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2007. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -30,10 +30,12 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Printing
     {
 
         #region Properties
-        public string FileName
+
+        
+         string FileName
         {
             get
-            {
+            { 
                 return this.fileName;
             }
             set
@@ -85,9 +87,9 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Printing
         private void MainForm_Load(object sender, EventArgs e)
         {
 #if !NETCORE
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\common\Data\Diagram\edd\SDLC.edd");
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\common\Data\Diagram\xml\SDLC.xml");
 #else
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\..\common\Data\Diagram\edd\SDLC.edd");
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\SDLC.xml");
 #endif
             this.diagram1.Model.LogicalSize = new SizeF(this.diagram1.View.ClientRectangle.Width + 16, this.diagram1.View.ClientRectangle.Height + 16);
 #region PropertyEditor Color Settings

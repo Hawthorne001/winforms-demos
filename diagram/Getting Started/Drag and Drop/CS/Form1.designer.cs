@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2012
+// Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -135,7 +135,7 @@ namespace DragDrop
             this.diagram1.MetroScrollBars = true;
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(542, 416);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 0;
@@ -147,7 +147,7 @@ namespace DragDrop
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
             this.diagram1.View.Grid.Visible = false;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.diagram1_MouseDown);
             this.diagram1.DragDrop += new System.Windows.Forms.DragEventHandler(this.diagram1_DragDrop);
             // 

@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2011
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2011. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -64,9 +64,9 @@ namespace ControlsGalore
             this.diagram2.Model = this.model;
             this.propertyEditor1.Diagram = this.selectedDiagram;
 #if !NETCORE
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #else
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #endif
         }
 
@@ -120,13 +120,13 @@ namespace ControlsGalore
             // 
             // openDiagramDialog
             // 
-            this.openDiagramDialog.Filter = "Diagram Files|*.edd|All files|*.*";
+            this.openDiagramDialog.Filter = "XML Files|*.xml|All files|*.*";
             this.openDiagramDialog.Title = "Open Diagram";
             // 
             // saveDiagramDialog
             // 
             this.saveDiagramDialog.FileName = "doc1";
-            this.saveDiagramDialog.Filter = "Diagram files|*.edd|All files|*.*";
+            this.saveDiagramDialog.Filter = "XML Files|*.xml|All files|*.*";
             this.saveDiagramDialog.Title = "SaveDiagram";
             // 
             // panel2
@@ -215,7 +215,7 @@ namespace ControlsGalore
             this.diagram2.MetroScrollBars = true;
             this.diagram2.Model = this.model;
             this.diagram2.Name = "diagram2";
-            this.diagram2.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram2.ScrollVirtualBounds")));
+            this.diagram2.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram2.Size = new System.Drawing.Size(482, 290);
             this.diagram2.SmartSizeBox = false;
             this.diagram2.TabIndex = 0;
@@ -226,7 +226,7 @@ namespace ControlsGalore
             this.diagram2.View.ClientRectangle = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.diagram2.View.Controller = this.diagram2.Controller;
             this.diagram2.View.Grid.MinPixelSpacing = 4F;
-            this.diagram2.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram2.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram2.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             this.diagram2.VScroll = true;
             this.diagram2.Click += new System.EventHandler(this.diagram2_Click);
@@ -263,7 +263,7 @@ namespace ControlsGalore
             this.diagram1.MetroScrollBars = true;
             this.diagram1.Model = this.model;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(482, 290);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 0;
@@ -274,7 +274,7 @@ namespace ControlsGalore
             this.diagram1.View.ClientRectangle = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds1")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             this.diagram1.VScroll = true;
             this.diagram1.Click += new System.EventHandler(this.diagram1_Click);

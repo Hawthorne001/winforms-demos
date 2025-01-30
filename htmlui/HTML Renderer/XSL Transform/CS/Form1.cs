@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -219,6 +219,9 @@ namespace Syncfusion.Windows.Forms.HTMLUI.Samples
 			XslCompiledTransform xslt = new XslCompiledTransform(); 
 			String sXML = ResourceToString(ResourceName);
 			XmlTextReader rdr = new XmlTextReader(sXML, XmlNodeType.Document, null);
+#if NET40
+			rdr.XmlResolver = null;
+#endif
             xslt.Load(rdr) ;
 			return xslt;
 		}

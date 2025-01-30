@@ -34,6 +34,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Images\ImageList1\**" />
+    <EmbeddedResource Remove="Images\ImageList1\**" />
+    <None Remove="Images\ImageList1\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

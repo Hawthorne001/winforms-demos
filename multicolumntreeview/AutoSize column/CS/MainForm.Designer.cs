@@ -5,6 +5,9 @@
 // licensing@syncfusion.com. Any infringement will be prosecuted under
 // applicable laws. 
 #endregion
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace MultiColumnTreeViewDemo
 {
     partial class MainForm
@@ -125,7 +128,11 @@ namespace MultiColumnTreeViewDemo
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 3);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "folder.ico");
             this.imageList1.Images.SetKeyName(1, "folder.ico");
@@ -211,6 +218,7 @@ namespace MultiColumnTreeViewDemo
 
         #endregion
 
+        
         private Syncfusion.Windows.Forms.Tools.MultiColumnTreeView.MultiColumnTreeView multiColumnTreeView1;
         private System.Windows.Forms.ImageList imageList1;
         private Syncfusion.Windows.Forms.Tools.GradientPanel panel1;

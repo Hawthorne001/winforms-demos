@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -31,17 +31,17 @@ namespace PaletteGroupbar
             paletteGroupBar1.VisualStyle = VisualStyle.Metro;
             paletteGroupBar1.GroupBarItemAdded += new GroupBarItemEventHandler(paletteGroupBar1_GroupBarItemAdded);
             paletteGroupBar1.NavigationPaneDropDownClick += new NavigationPaneDropDownClickEventHandler(paletteGroupBar1_NavigationPaneDropDownClick);
-            //Load edp files
+            //Load xml files
 #if !NETCORE
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Circuit Shapes.edp");
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Basic Shapes.edp");
-            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\FloorPlan Shapes.edp");
-            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Circuit Shapes.xml");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Basic Shapes.xml");
+            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\FloorPlan Shapes.xml");
+            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #else
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Circuit Shapes.edp");
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Basic Shapes.edp");
-            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\FloorPlan Shapes.edp");
-            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Circuit Shapes.xml");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Basic Shapes.xml");
+            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\FloorPlan Shapes.xml");
+            paletteGroupBar3.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #endif
 
             GroupBarAppearance();
@@ -119,7 +119,7 @@ namespace PaletteGroupbar
         private void btnAddPalette_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = @"PaletteFiles(*.edp)|*.edp";
+            openFileDialog.Filter = @"XML Files(*.xml)|*.xml";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 paletteGroupBar1.LoadPalette(openFileDialog.FileName);

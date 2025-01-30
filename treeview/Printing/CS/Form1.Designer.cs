@@ -8,6 +8,8 @@
 using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.WinForms.Input;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace PrintingCustomization
 {
@@ -492,7 +494,11 @@ namespace PrintingCustomization
             // 
             // LeftRightimageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.LeftRightimageList, "LeftRightImageList", 3);
+#else
             this.LeftRightimageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("LeftRightimageList.ImageStream")));
+#endif
             this.LeftRightimageList.TransparentColor = System.Drawing.Color.Transparent;
             this.LeftRightimageList.Images.SetKeyName(0, "AlignTableCellMiddleLeftJustHS.png");
             this.LeftRightimageList.Images.SetKeyName(1, "RadialChartHS.png");
@@ -805,7 +811,11 @@ namespace PrintingCustomization
             // 
             // StateimageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.StateimageList, "StateImageList", 9);
+#else
             this.StateimageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("StateimageList.ImageStream")));
+#endif
             this.StateimageList.TransparentColor = System.Drawing.Color.Transparent;
             this.StateimageList.Images.SetKeyName(0, "flag_mexico.png");
             this.StateimageList.Images.SetKeyName(1, "flag_canada.png");
@@ -921,7 +931,6 @@ namespace PrintingCustomization
 
         #endregion
 
-       
         private Syncfusion.WinForms.ListView.SfComboBox sfComboBox2;
        
         private System.Windows.Forms.ImageList LeftRightimageList;

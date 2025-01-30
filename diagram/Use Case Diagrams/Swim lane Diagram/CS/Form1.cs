@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -39,16 +39,17 @@ namespace SwimLaneDiagram
             this.diagram1.BeginUpdate();            
             this.diagram1.Model.RenderingStyle.SmoothingMode = SmoothingMode.HighQuality;
             this.diagram1.Model.BoundaryConstraintsEnabled = false;
-#if !NETCORE
-            fileName = @"..\..\..\..\..\..\common\Data\Diagram\edd\SwimLaneDiagram.edd";
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\common\Data\Diagram\edd\SwimLaneDiagram.edd");
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\SwimLane Symbols.edp");
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+
+#if !(NETCORE || NET50 || NET80 || NET60 || NET70 || NET90)
+            fileName = @"..\..\..\..\..\..\common\Data\Diagram\xml\SwimLaneDiagram.xml";
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\common\Data\Diagram\xml\SwimLaneDiagram.xml");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\SwimLane Symbols.xml");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #else
-            fileName = @"..\..\..\..\..\..\..\common\Data\Diagram\edd\SwimLaneDiagram.edd";
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\..\common\Data\Diagram\edd\SwimLaneDiagram.edd");
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\SwimLane Symbols.edp");
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            fileName = @"..\..\..\..\..\..\..\common\Data\Diagram\xml\SwimLaneDiagram.xml";
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\SwimLaneDiagram.xml");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\SwimLane Symbols.xml");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #endif
             this.diagram1.View.BackgroundColor = Color.White;
             this.diagram1.Model.LineStyle.LineWidth = 0;
@@ -117,11 +118,11 @@ namespace SwimLaneDiagram
             this.diagram1.View.SelectionList.Clear();
         }
 
-#endregion
+        #endregion
 
-#region Properties
+        #region Properties
 
-        public bool SaveChanges
+         bool SaveChanges
         {
             get
             {
@@ -177,13 +178,14 @@ namespace SwimLaneDiagram
         
         private void newToolStripButton_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.FilterIndex = 0;
             if (this.SaveChanges)
             {
                 DialogResult res = MessageBoxAdv.Show(this, "The diagram or its association has been modified. Save changes?", "Save changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
                     this.saveFileDialog1.FileName = "Diagram";
-                    saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+                    saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
                     saveFileDialog1.Title = "Save File As:";
 
                     if (this.HasFileName)
@@ -223,13 +225,14 @@ namespace SwimLaneDiagram
      
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
+            openFileDialog1.FilterIndex = 0;
             if (this.SaveChanges)
             {
                 DialogResult res = MessageBoxAdv.Show(this, "The diagram or its association has been modified. Save changes?", "Save changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
                     this.saveFileDialog1.FileName = "Diagram";
-                    saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+                    saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
                     saveFileDialog1.Title = "Save File As:";
 
                     if (this.saveFileDialog1.ShowDialog(this) == DialogResult.OK)
@@ -238,7 +241,7 @@ namespace SwimLaneDiagram
                         SaveDiagramAs(saveFileDialog1.FileName, saveFileDialog1.FilterIndex);
                     }
 
-                    this.openFileDialog1.Filter = "EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+                    this.openFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
                     this.openFileDialog1.Title = "Open Diagram";
                     this.openFileDialog1.FileName = "";
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -251,7 +254,7 @@ namespace SwimLaneDiagram
                 }
                 else if (res == DialogResult.No)
                 {
-                    this.openFileDialog1.Filter = "EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+                    this.openFileDialog1.Filter = "XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
                     this.openFileDialog1.Title = "Open Diagram";
                     this.openFileDialog1.FileName = "";
                     if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -265,7 +268,7 @@ namespace SwimLaneDiagram
             }
             else
             {
-                this.openFileDialog1.Filter = "EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+                this.openFileDialog1.Filter = "XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
                 this.openFileDialog1.Title = "Open Diagram";
                 this.openFileDialog1.FileName = "";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -281,20 +284,26 @@ namespace SwimLaneDiagram
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.FilterIndex = 0;
             if (string.IsNullOrEmpty(fileName) || !File.Exists(fileName))
             {
-                saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml";
+                saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd";
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     switch (saveFileDialog1.FilterIndex)
                     {
                         case 1:
-                            diagram1.SaveBinary(saveFileDialog1.FileName);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                            diagram1.SaveXml(saveFileDialog1.FileName);
+                            this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(saveFileDialog1.FileName);
+#endif
+
                             break;
                         case 2:
-#if !NETCORE
-                            diagram1.SaveSoap(saveFileDialog1.FileName);
-#endif
+                            diagram1.SaveBinary(saveFileDialog1.FileName);
                             break;
                     }
                     this.fileName = saveFileDialog1.FileName;
@@ -309,8 +318,12 @@ namespace SwimLaneDiagram
                 }
                 else if (fi.Extension == ".xml")
                 {
-#if !NETCORE
-                    diagram1.SaveSoap(fi.FullName);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                    diagram1.SaveXml(fi.FullName);
+                    this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(fi.FullName);
 #endif
                 }
             }
@@ -443,8 +456,9 @@ namespace SwimLaneDiagram
 
         private void saveAsToolStripButton_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.FilterIndex = 0;
             this.saveFileDialog1.FileName = "Diagram";
-            saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+            saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
             saveFileDialog1.Title = "Save File As:";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -578,12 +592,17 @@ namespace SwimLaneDiagram
             switch (index)
             {
                 case 1:
-                    diagram1.SaveBinary(filename);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                    diagram1.SaveXml(filename);
+                    this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(filename);
+#endif
+
                     break;
                 case 2:
-#if !NETCORE
-                    diagram1.SaveSoap(filename);
-#endif
+                    diagram1.SaveBinary(filename);
                     break;
                 default:
                     diagram1.SaveBinary(filename);
@@ -597,12 +616,16 @@ namespace SwimLaneDiagram
             switch (index)
             {
                 case 1:
-                    diagram1.LoadBinary(filename);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                    diagram1.LoadXml(filename);
+                    this.diagram1.Refresh();
+#else
+                        this.diagram1.LoadSoap(filename);
+#endif
                     break;
                 case 2:
-#if !NETCORE
-                    diagram1.LoadSoap(filename);
-#endif
+                    diagram1.LoadBinary(filename);
                     break;
                 default:
                     diagram1.LoadBinary(filename);

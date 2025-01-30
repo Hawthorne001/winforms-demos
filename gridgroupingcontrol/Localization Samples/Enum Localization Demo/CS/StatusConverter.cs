@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -63,9 +63,9 @@ namespace I58680b
                     return Status.Divorced;
                 case "verheiratet":
                     return Status.Married;
-                case "Einzel":
+                case "Ledig":
                     return Status.Single;
-                case "Witwe":
+                case "Verwitwet":
                     return Status.Widow;
                 default:
                     return null;
@@ -91,9 +91,9 @@ namespace I58680b
                 case Status.Married:
                     return "verheiratet";
                 case Status.Single:
-                    return "Einzel";
+                    return "Ledig";
                 case Status.Widow:
-                    return "Witwe";
+                    return "Verwitwet";
                 default:
                     return string.Empty;
             }

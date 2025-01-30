@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -18,59 +18,59 @@ namespace LocalizationDemo
             switch (name)
             {
                 case PivotResourceIdentifiers.PivotTableFieldList:
-                    return "Pivot Tablie Feld liste";
+                    return "Pivot Tabellen Feldliste";
                 case PivotResourceIdentifiers.Choosefieldstoaddreport:
-                    return "Wählen Sie Felder aus, die zum Bericht hinzugefügt werden sollen";
+                    return "Felder auswählen, die dem Bericht hinzugefügt werden sollen";
                 case PivotResourceIdentifiers.ColumnLabels:
-                    return "Säulen";
+                    return "Spalten";
                 case PivotResourceIdentifiers.DeferlayoutUpdate:
-                    return "Layout - Aktualisierung verschieben";
+                    return "Layout - Aktualisierung aufschieben";
                 case PivotResourceIdentifiers.Dragfieldsbetweenareasbelow:
-                    return "Ziehen Sie Felder zwischen den Bereichen darunter";
+                    return "Felder zwischen den untenstehenden Bereichen ziehen";
                 case PivotResourceIdentifiers.DropPivotFieldsheretoFilterBy:
-                    return "Schau hier, um Pivot Felder durch Filter";
+                    return "Pivot Felder hier ablegen, um danach zu filtern";
                 case PivotResourceIdentifiers.MoveDown:
-                    return "Nach unten";
+                    return "Nach unten verschieben";
                 case PivotResourceIdentifiers.MoveToBeginning:
-                    return "An den Anfang";
+                    return "An den Anfang verschieben";
                 case PivotResourceIdentifiers.MoveToColumnLabels:
-                    return "Spaltenbeschriftungen";
+                    return "Zu Spaltenbeschriftungen verschieben";
                 case PivotResourceIdentifiers.MoveToEnd:
-                    return "Zum Ende";
+                    return "An das Ende verschieben";
                 case PivotResourceIdentifiers.MoveToReportFilter:
-                    return "Verschieben nach Filter melden";
+                    return "Zu Berichtsfiltern verschieben";
                 case PivotResourceIdentifiers.MoveToRowLabels:
-                    return "Verschieben nach Etikettenzeile";
+                    return "Zu Zeilenbeschriftungen verschieben";
                 case PivotResourceIdentifiers.MoveToValues:
-                    return "Bewegen Sie die Werte";
+                    return "Zu Werten verschieben";
                 case PivotResourceIdentifiers.MoveUp:
-                    return "Nach oben";
+                    return "Nach oben verschieben";
                 case PivotResourceIdentifiers.OK:
-                    return "Ordnung";
+                    return "OK";
                 case PivotResourceIdentifiers.Cancel:
-                    return "Stornieren";
+                    return "Abbrechen";
                 case PivotResourceIdentifiers.PivotSchemaDesigner:
-                    return "Pivot Svhemae Konstrukteur";
+                    return "Pivot Schema Designer";
                 case PivotResourceIdentifiers.RemoveField:
                     return "Feld entfernen";
                 case PivotResourceIdentifiers.ReportFilter:
                     return "Filter";
                 case PivotResourceIdentifiers.RowLabel:
-                    return "Reihen";
+                    return "Zeilen";
                 case PivotResourceIdentifiers.ShowCalculationsasColumns:
-                    return "Die Berechnungen zeigen, wie Spalten";
+                    return "Berechnungen als Spalten anzeigen";
                 case PivotResourceIdentifiers.Update:
-                    return "Aktualisierung";
+                    return "Aktualisieren";
                 case PivotResourceIdentifiers.Values:
                     return "Werte";
                 case PivotResourceIdentifiers.FieldName:
                     return "Feldname";
                 case PivotResourceIdentifiers.FieldHeader:
-                    return "Feld Kopfzeile";
+                    return "Feldüberschrift";
                 case PivotResourceIdentifiers.BaseField:
                     return "Basisfeld";
                 case PivotResourceIdentifiers.BaseItem:
-                    return "Basisgegenstand";
+                    return "Basisobjekt";
                 case PivotResourceIdentifiers.Description:
                     return "Beschreibung";
                 case PivotResourceIdentifiers.Format:
@@ -94,23 +94,23 @@ namespace LocalizationDemo
                 case PivotResourceIdentifiers.Count:
                     return "Anzahl";
                 case PivotResourceIdentifiers.DecimalTotalSum:
-                    return "Dezimal-Gesamtsumme";
+                    return "Dezimale Gesamtsumme";
                 case PivotResourceIdentifiers.IntTotalSum:
-                    return "Int Gesamtsumme";
+                    return "Ganze Gesamtsumme";
                 case PivotResourceIdentifiers.Custom:
-                    return "Brauch";
+                    return "Benutzerdefiniert";
                 case PivotResourceIdentifiers.DisplayIfDiscreteValuesEqual:
                     return "Anzeige wenn Diskrete Werte gleich sind";
                 case PivotResourceIdentifiers.Sum:
                     return "Summe";
                 case PivotResourceIdentifiers.Average:
-                    return "Durchschnittlich";
+                    return "Durchschnitt";
                 case PivotResourceIdentifiers.Max:
                     return "Max";
                 case PivotResourceIdentifiers.Min:
-                    return "Mindest";
+                    return "Min";
                 case PivotResourceIdentifiers.CountNumbers:
-                    return "Nummern Zählen";
+                    return "Anzahl der Zahlen";
                 case PivotResourceIdentifiers.StdDev:
                     return "Std. Dev";
                 case PivotResourceIdentifiers.StdDevP:
@@ -120,7 +120,7 @@ namespace LocalizationDemo
                 case PivotResourceIdentifiers.VarP:
                     return "VarP";
                 case PivotResourceIdentifiers.DoubleVariance:
-                    return "Doppelte Abweichung";
+                    return "Doppelte Varianz";
                 case PivotResourceIdentifiers.NoCalculation:
                     return "Keine Berechnung";
                 case PivotResourceIdentifiers.PercentageOfGrandTotal:
@@ -130,11 +130,11 @@ namespace LocalizationDemo
                 case PivotResourceIdentifiers.PercentageOfRowTotal:
                     return "% der Zeilensumme";
                 case PivotResourceIdentifiers.PercentageOfParentColumnTotal:
-                    return "% der übergeordneten Spalte insgesamt";
+                    return "% der übergeordneten spaltensumme";
                 case PivotResourceIdentifiers.PercentageOfParentRowTotal:
                     return "% der übergeordneten Zeilensumme";
                 case PivotResourceIdentifiers.PercentageOfParentTotal:
-                    return "% der Elternsumme";
+                    return "% der übergeordneten Gesamtsumme";
                 case PivotResourceIdentifiers.Index:
                     return "Index";
                 case PivotResourceIdentifiers.Formula:
@@ -142,23 +142,23 @@ namespace LocalizationDemo
                 case PivotResourceIdentifiers.PercentageOf:
                     return "% von";
                 case PivotResourceIdentifiers.DifferenceFrom:
-                    return "Unterschied von";
+                    return "Differenz von";
                 case PivotResourceIdentifiers.PercentageOfDifferenceFrom:
-                    return "% Unterschied von";
+                    return "% der Differenz von";
                 case PivotResourceIdentifiers.RunningTotalIn:
-                    return "Laufende Summe";
+                    return "Laufende Summe in";
                 case PivotResourceIdentifiers.PercentageOfRunningTotalIn:
                     return "% der laufenden Summe in";
                 case PivotResourceIdentifiers.RankSmallestToLargest:
-                    return "Rang Kleinster bis Größter";
+                    return "Rang vom Kleinsten zum Größten";
                 case PivotResourceIdentifiers.RankLargestToSmallest:
-                    return "Rang am größten zum kleinsten";
+                    return "Rang vom Größten zum Kleinsten";
                 case PivotResourceIdentifiers.Distinct:
-                    return "Eindeutig";
+                    return "Unterscheidung";
                 case PivotResourceIdentifiers.SubTotal:
-                    return "Gesamt";
+                    return "Zwischensumme";
                 case PivotResourceIdentifiers.GrandTotal:
-                    return "Großartig";
+                    return "Gesamt";
                 default:
                     return string.Empty;
             }         

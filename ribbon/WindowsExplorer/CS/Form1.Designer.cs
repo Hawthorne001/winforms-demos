@@ -6,6 +6,8 @@
 // applicable laws. 
 #endregion
 using System;
+using System.Drawing;
+using System.Windows.Forms;
 namespace WindowsExplorerDemo_2013
 {
     partial class Form1
@@ -27,6 +29,30 @@ namespace WindowsExplorerDemo_2013
             }
             base.Dispose(disposing);
         }
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            if (folder == "ImageList2")
+            {
+                imageList.ImageSize = new System.Drawing.Size(49, 49);
+            }
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"WindowsExplorerDemo_2013.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
 
         #region Windows Form Designer generated code
 
@@ -748,7 +774,11 @@ namespace WindowsExplorerDemo_2013
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 8);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Icon-3.png");
             this.imageList1.Images.SetKeyName(1, "Icon-4.png");
@@ -967,7 +997,11 @@ namespace WindowsExplorerDemo_2013
             // 
             // TreeViewImageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.TreeViewImageList, "TreeViewImageList", 15);
+#else
             this.TreeViewImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("TreeViewImageList.ImageStream")));
+#endif  
             this.TreeViewImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.TreeViewImageList.Images.SetKeyName(0, "Icon-1.png");
             this.TreeViewImageList.Images.SetKeyName(1, "Icon-2.png");
@@ -1152,7 +1186,11 @@ namespace WindowsExplorerDemo_2013
             // 
             // imageList2
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList2, "ImageList2", 9);
+#else
             this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+#endif
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList2.Images.SetKeyName(0, "__DVD RW drive.png");
             this.imageList2.Images.SetKeyName(1, "__Local Disk(c).png");
@@ -1218,7 +1256,11 @@ namespace WindowsExplorerDemo_2013
             // 
             // imageList3
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList3, "ImageList3", 7);
+#else
             this.imageList3.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList3.ImageStream")));
+#endif
             this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList3.Images.SetKeyName(0, "Search.png");
             this.imageList3.Images.SetKeyName(1, "1.png");

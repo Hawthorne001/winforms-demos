@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2014
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2014. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -130,6 +130,26 @@ namespace GroupViewDemo
         }
         #endregion
 
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"GroupViewDemo.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
+
         #region Designer generated code
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -188,7 +208,11 @@ namespace GroupViewDemo
             // 
             // ilGroupBarLarge
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.ilGroupBarLarge, "IlGroupBarLarge", 19);
+#else
             this.ilGroupBarLarge.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilGroupBarLarge.ImageStream")));
+#endif
             this.ilGroupBarLarge.TransparentColor = System.Drawing.Color.Transparent;
             this.ilGroupBarLarge.Images.SetKeyName(0, "");
             this.ilGroupBarLarge.Images.SetKeyName(1, "");
@@ -212,7 +236,11 @@ namespace GroupViewDemo
             // 
             // ilGroupBarSmall
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.ilGroupBarSmall, "IlGroupBarSmall", 21);
+#else
             this.ilGroupBarSmall.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilGroupBarSmall.ImageStream")));
+#endif
             this.ilGroupBarSmall.TransparentColor = System.Drawing.Color.Transparent;
             this.ilGroupBarSmall.Images.SetKeyName(0, "");
             this.ilGroupBarSmall.Images.SetKeyName(1, "");
@@ -238,7 +266,11 @@ namespace GroupViewDemo
             // 
             // imageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList, "ImageList", 10);
+#else
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+#endif
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList.Images.SetKeyName(0, "palette.png");
             this.imageList.Images.SetKeyName(1, "font.png");

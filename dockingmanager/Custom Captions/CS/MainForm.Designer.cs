@@ -1,10 +1,13 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
 // applicable laws. 
 #endregion
+
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace CustomCaption
 {
@@ -27,6 +30,26 @@ namespace CustomCaption
             }
             base.Dispose(disposing);
         }
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"CustomCaption.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
 
         #region Windows Form Designer generated code
 
@@ -282,7 +305,11 @@ namespace CustomCaption
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 16);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "panels_new3_close.ico");
             this.imageList1.Images.SetKeyName(1, "panels_new3_autohide1.ico");

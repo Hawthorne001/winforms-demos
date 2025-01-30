@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -446,7 +446,7 @@ namespace Sequence_Diagram_2005
             this.diagram1.Location = new System.Drawing.Point(214, 77);
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(820, 595);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 2;
@@ -457,7 +457,7 @@ namespace Sequence_Diagram_2005
             this.diagram1.View.ClientRectangle = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             // 
             // model1
             // 

@@ -95,6 +95,7 @@ namespace TabbedMDI_2005
         }
 
         // Convenient way to toggle TabbedMDI mode.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal bool TabbedMDIOn
         {
             get { return this.tabWindowsOn; }

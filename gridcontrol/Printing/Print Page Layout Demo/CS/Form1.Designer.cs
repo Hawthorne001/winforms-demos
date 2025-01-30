@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -227,6 +227,7 @@ namespace PrintPageLayout
             this.button1.TabIndex = 9;
             this.button1.Text = "PrintPreview";
             this.button1.ThemeName = "Metro";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 

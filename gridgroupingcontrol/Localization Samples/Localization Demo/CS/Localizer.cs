@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2015
+// Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -34,57 +34,57 @@ namespace DynamicFilter
             {
                 case DynamicFilterResourceIdentifiers.StartsWith:
                     if (comparerList)
-                        return "empieza con";
+                        return "Beginnt mit";
                     else
                         return "StartsWith";
                 case DynamicFilterResourceIdentifiers.EndsWith:
                     if (comparerList)
-                        return "termina con";
+                        return "Endet mit";
                     else
                         return "EndsWith";
                 case DynamicFilterResourceIdentifiers.Equal:
                     if (comparerList)
-                        return "es igual a";
+                        return "Gleich";
                     else
                         return "Equals";
                 case DynamicFilterResourceIdentifiers.GreaterThan:
                     if (comparerList)
-                        return "mayor que";
+                        return "Größer als";
                     else
                         return "GreaterThan";
                 case DynamicFilterResourceIdentifiers.GreaterThanOrEqualTo:
                     if (comparerList)
-                        return "Mayor o igual a";
+                        return "Größer oder gleich";
                     else
                         return "GreaterThanOrEqualTo";
                 case DynamicFilterResourceIdentifiers.LessThan:
                     if (comparerList)
-                        return "menos que";
+                        return "Kleiner als";
                     else
                         return "LessThan";
                 case DynamicFilterResourceIdentifiers.LessThanOrEqualTo:
                     if (comparerList)
-                        return "Menor o igual a";
+                        return "Kleiner oder gleich";
                     else
                         return "LessThanOrEqualTo";
                 case DynamicFilterResourceIdentifiers.Like:
                     if (comparerList)
-                        return "como";
+                        return "Ähnlich";
                     else
                         return "Like";
                 case DynamicFilterResourceIdentifiers.Match:
                     if (comparerList)
-                        return "partido";
+                        return "Übereinstimmung";
                     else
                         return "Match";
                 case DynamicFilterResourceIdentifiers.NotEquals:
                     if (comparerList)
-                        return "no es igual";
+                        return "Ungleich";
                     else
                         return "NotEqual";
                 case DynamicFilterResourceIdentifiers.ExpressionMATCH:
                     if (comparerList)
-                        return "expresión de coincidencia";
+                        return "Ausdrucksübereinstimmung";
                     else
                         return "ExpressionMatch";
 
@@ -97,15 +97,15 @@ namespace DynamicFilter
                 // DropDown filter item 
 
                 case DynamicFilterResourceIdentifiers.All:
-                    return "(todo)";
+                    return "(Alle)";
                 case DynamicFilterResourceIdentifiers.Custom:
-                    return "(costumbre...)";
+                    return "(Benutzerdefiniert...)";
                 case DynamicFilterResourceIdentifiers.Empty:
-                    return "(vacío)";
+                    return "(Leer)";
 
                 //Drag group column
                 case GroupingResourceIdentifiers.DragColumnHeaderHereText:
-                    return "Ziehen Sie die Spaltenüberschrift";
+                    return "Ziehen Sie die Spaltenüberschrift hierher";
 
                 case DynamicFilterResourceIdentifiers.FieldChooser:
                     if (fieldChooser)
@@ -126,37 +126,37 @@ namespace DynamicFilter
 
                 case DynamicFilterResourceIdentifiers.SelectAll:
                     if (office2007Filter)
-                        return "Alle auswählen";
+                        return "Alles auswählen";
                     else
                         return "SelectAll";
                 case DynamicFilterResourceIdentifiers.SortAtoZ:
                     if (office2007Filter)
-                        return "&SortierenAbisZ";
+                        return "Sortieren A bis Z";
                     else
-                        return "&SortAtoZ";
+                        return "Sort A to Z";
                 case DynamicFilterResourceIdentifiers.SortZtoA:
                     if (office2007Filter)
-                        return "S&ortierenZbisA";
+                        return "Sortieren Z bis A";
                     else
-                        return "S&ortZtoA";
+                        return "Sort Z to A";
                 case DynamicFilterResourceIdentifiers.TextFilters:
                     if (office2007Filter)
-                        return "&Text-Filter";
+                        return "Text-Filter";
                     else
                         return "TextFilters";
                 case DynamicFilterResourceIdentifiers.ClearFilterFrom:
                     if (office2007Filter)
-                        return "&Von Filterstundenzähler";
+                        return "Filter löschen von";
                     else
                         return "ClearFilterFrom";
                 case DynamicFilterResourceIdentifiers.ShowRowsWhere:
                     if (office2007Filter)
-                        return "Zeigt die Zeilen, in denen";
+                        return "Zeigt die Zeilen, in denen:";
                     else
                         return "Shows the rows where:";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilter:
                     if (office2007Filter)
-                        return "Benutzerdefinierte Auto Filter";
+                        return "Benutzerdefinierter Auto Filter";
                     else
                         return "CustomAutoFilter";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterLessthan:
@@ -166,12 +166,12 @@ namespace DynamicFilter
                         return "LessThan";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterEqual:
                     if (office2007Filter)
-                        return "Equal";
+                        return "Gleich";
                     else
                         return "Equal";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterNotequal:
                     if (office2007Filter)
-                        return "notEqual";
+                        return "Ungleich";
                     else
                         return "NotEqual";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterGreaterthan:
@@ -186,17 +186,17 @@ namespace DynamicFilter
                         return "GreaterthanOrEqual";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterlessthanOrEqual:
                     if (office2007Filter)
-                        return "LessThan oder-gleich-";
+                        return "Kleiner oder gleich";
                     else
                         return "LessthanOrEqual";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterLike:
                     if (office2007Filter)
-                        return "wie";
+                        return "Ähnlich";
                     else
                         return "Like";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterMatch:
                     if (office2007Filter)
-                        return "Spiel";
+                        return "Übereinstimmung";
                     else
                         return "Match";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterBeginsWith:
@@ -211,7 +211,7 @@ namespace DynamicFilter
                         return "EndsWith";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterCancel:
                     if (office2007Filter)
-                        return "stornieren";
+                        return "Abbrechen";
                     else
                         return "Cancel";
                 case DynamicFilterResourceIdentifiers.CustomAutoFilterOK:
@@ -221,12 +221,12 @@ namespace DynamicFilter
                         return "Ok";
                 case DynamicFilterResourceIdentifiers.Office2007FilterEquals:
                     if (office2007Filter)
-                        return "Equals";
+                        return "Gleich";
                     else
                         return "Equals";
                 case DynamicFilterResourceIdentifiers.Office2007FilterNotEquals:
                     if (office2007Filter)
-                        return "Nicht gleich";
+                        return "Ungleich";
                     else
                         return "NotEqual";
                 case DynamicFilterResourceIdentifiers.Office2007FilterBeginswith:
@@ -246,7 +246,7 @@ namespace DynamicFilter
                         return "Contains";
                 case DynamicFilterResourceIdentifiers.Office2007FilterCustomFilter:
                     if (office2007Filter)
-                        return "Benutzerdefinierte Filter";
+                        return "Benutzerdefinierter Filter";
                     else
                         return "CustomFilter";
                 case DynamicFilterResourceIdentifiers.Office2007FilterCustomFilterand:

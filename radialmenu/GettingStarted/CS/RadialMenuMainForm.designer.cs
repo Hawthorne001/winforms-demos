@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -316,7 +316,7 @@ namespace RadialMenuDemo
             this.richTextBox1.Location = new System.Drawing.Point(42, 28);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(969, 880);
+            this.richTextBox1.Size = new System.Drawing.Size(980, 860);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseUp);

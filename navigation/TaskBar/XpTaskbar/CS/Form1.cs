@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2014
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2014. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -109,6 +109,30 @@ namespace TaskBar
         }
         #endregion
 
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            if (folder == "ImageList2")
+            {
+                imageList.ImageSize = new System.Drawing.Size(32, 32);
+            }
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"TaskBar.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
+
         #region Windows Form Designer generated code
         /// <summary>
 		/// Required method for Designer support - do not modify
@@ -144,14 +168,22 @@ namespace TaskBar
             // 
             // imageList2
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList2, "ImageList2", 2);
+#else
             this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+#endif
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList2.Images.SetKeyName(0, "");
             this.imageList2.Images.SetKeyName(1, "");
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 5);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "");
             this.imageList1.Images.SetKeyName(1, "");

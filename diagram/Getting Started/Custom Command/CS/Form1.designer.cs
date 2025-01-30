@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2012
+// Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -45,7 +45,6 @@ namespace CustomCommand
         private void InitializeComponent( ) {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -66,15 +65,6 @@ namespace CustomCommand
             ((System.ComponentModel.ISupportInitialize)(this.diagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.model1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "");
-            this.imageList1.Images.SetKeyName(1, "");
-            this.imageList1.Images.SetKeyName(2, "palette_groupbar.png");
-            this.imageList1.Images.SetKeyName(3, "property_editor.png");
             // 
             // panel1
             // 
@@ -206,7 +196,7 @@ namespace CustomCommand
             this.diagram1.MetroScrollBars = true;
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(1058, 591);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 0;
@@ -219,7 +209,7 @@ namespace CustomCommand
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
             this.diagram1.View.Grid.Visible = false;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             this.diagram1.VScroll = true;
             // 
@@ -268,7 +258,6 @@ namespace CustomCommand
         
         #endregion
 
-        private ImageList imageList1;
         private Panel panel1;
         private ToolStrip toolStrip1;
         private Panel panel2;

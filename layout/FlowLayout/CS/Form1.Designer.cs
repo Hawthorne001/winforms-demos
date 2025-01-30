@@ -5,6 +5,9 @@
 // licensing@syncfusion.com. Any infringement will be prosecuted under
 // applicable laws. 
 #endregion
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace FlowLayoutExample
 {
     partial class Form1
@@ -26,6 +29,26 @@ namespace FlowLayoutExample
             }
             base.Dispose(disposing);
         }
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"FlowLayoutExample.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
 
         #region Windows Form Designer generated code
 
@@ -407,7 +430,11 @@ namespace FlowLayoutExample
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 3);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "ThisPC.png");
             this.imageList1.Images.SetKeyName(1, "__Local Disk(c).png");

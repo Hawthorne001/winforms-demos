@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2013
+// Copyright Syncfusion Inc. 2001 - 2013. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -46,16 +46,18 @@ namespace SeatReservation
             diagram1.BeginUpdate();
             diagram1.Model.BoundaryConstraintsEnabled = false;
             diagram1.Controller.Guides.Enable = false;
+            PaletteGroupBar paletteGroupBar = new PaletteGroupBar();
 #if !NETCORE
-            SymbolPalette palette = this.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\SeatReservationSymbols.edp");
+            paletteGroupBar.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\SeatReservationSymbols.xml");
 #else
-            SymbolPalette palette = this.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\SeatReservationSymbols.edp");
+            paletteGroupBar.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\SeatReservationSymbols.xml");
 #endif
             this.diagram1.Model.RenderingStyle.SmoothingMode = SmoothingMode.HighQuality;
             this.diagram1.Model.DocumentSize = new PageSize(1169, 1269);
             this.diagram1.Model.BoundaryConstraintsEnabled = false;
             diagram1.Controller.InPlaceEditing = false;
-            InitializeDiagram(palette);
+            if (paletteGroupBar != null && paletteGroupBar.CurrentSymbolPalette != null)
+                InitializeDiagram(paletteGroupBar.CurrentSymbolPalette);
             DiagramAppearance();
             diagram1.EndUpdate();
 

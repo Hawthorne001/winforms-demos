@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2014
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2014. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -685,6 +685,7 @@ Application.EnableVisualStyles();
                     this.editControl1.Style = EditControlStyle.Office2016Colorful;
                     this.editControl1.SelectionTextColor = ColorTranslator.FromHtml("#bfdfff");
                     this.editControl1.Configurator.Open(configPath);
+                    this.editControl1.ApplyConfiguration("CustomLanguage");
                     mi.Checked = true;
 
                     break;

@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -144,7 +144,7 @@ namespace RadialMenuDemo
             this.richTextBox1.Location = new System.Drawing.Point(42, 28);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(972, 880);
+            this.richTextBox1.Size = new System.Drawing.Size(980, 860);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseUp);
@@ -595,6 +595,7 @@ namespace RadialMenuDemo
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1025, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(399, 880);
@@ -990,7 +991,11 @@ namespace RadialMenuDemo
             // 
             // RadialMenuMainForm
             // 
+#if !NETCORE
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+#else
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 29F);
+#endif
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CaptionAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ClientSize = new System.Drawing.Size(1447, 929);

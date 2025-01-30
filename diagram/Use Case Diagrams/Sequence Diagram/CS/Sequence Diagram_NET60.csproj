@@ -6,7 +6,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>Sequence Diagram_2005</AssemblyName>
     <RootNamespace>Sequence_Diagram_2005</RootNamespace>
-    <DefineConstants>NETCORE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET60</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFrameworkVersion>
     </TargetFrameworkVersion>

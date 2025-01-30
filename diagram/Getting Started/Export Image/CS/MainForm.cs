@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2012
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -121,9 +121,9 @@ namespace ExportImage
         private void MainForm_Load(object sender, EventArgs e)
         {
 #if !NETCORE
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\common\Data\Diagram\edd\ExportImage_DataFlow.edd");
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\common\Data\Diagram\xml\ExportImage_DataFlow.xml");
 #else
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\..\common\Data\Diagram\edd\ExportImage_DataFlow.edd");
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\ExportImage_DataFlow.xml");
 #endif
             this.paletteGroupView1.ShowToolTips = true;
             this.diagram1.View.SelectionList.Clear();

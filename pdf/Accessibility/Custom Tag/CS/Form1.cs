@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2017
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2017. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -336,12 +336,12 @@ namespace EssentialPDFSamples
             pdfGridHeader.ApplyStyle(headerStyle);
 
             pdfGridHeader.Cells[0].Value = "Times Roman Family";
-            pdfGridHeader.Cells[0].PdfTag = new PdfStructureElement(PdfTagType.TableHeader);
+            pdfGridHeader.Cells[0].PdfTag = new PdfStructureElement(PdfTagType.TableHeader) { Scope = ScopeType.Column };
 
             pdfGridHeader.Cells[1].Value = "Helvetica Family";
-            pdfGridHeader.Cells[1].PdfTag = new PdfStructureElement(PdfTagType.TableHeader);
+            pdfGridHeader.Cells[1].PdfTag = new PdfStructureElement(PdfTagType.TableHeader) { Scope = ScopeType.Column };
             pdfGridHeader.Cells[2].Value = "Courier Family";
-            pdfGridHeader.Cells[2].PdfTag = new PdfStructureElement(PdfTagType.TableHeader);
+            pdfGridHeader.Cells[2].PdfTag = new PdfStructureElement(PdfTagType.TableHeader) { Scope = ScopeType.Column };
 
             PdfGridRow pdfGridRow1 = pdfGrid.Rows.Add();
             pdfGridRow1.PdfTag = new PdfStructureElement(PdfTagType.TableRow);

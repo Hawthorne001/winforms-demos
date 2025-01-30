@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -76,6 +76,7 @@ namespace StatePersistence
 
         }
 
+         bool canUpdateLayout = true;
 
         /// <summary>
         /// Wire the events
@@ -146,6 +147,12 @@ namespace StatePersistence
 
         void dockingManager1_NewDockStateEndLoad(object sender, EventArgs e)
         {
+#if NET9_0_OR_GREATER
+            if (canUpdateLayout)
+            {
+                ResetLayout();
+            }
+#else
             this.dockingManager1.SetDockLabel(this.panel3, "ToolBox");
             this.dockingManager1.SetDockLabel(this.panel4, "Properties");
             this.dockingManager1.SetDockLabel(this.panel5, "SolutionExplorer");
@@ -157,7 +164,7 @@ namespace StatePersistence
                 tabControlAdv.SelectedIndex = 0;
             SkinManager.SetVisualStyle(this, "Office2019Colorful");
             this.mainFrameBarManager1.ThemeName = "Office2019Colorful";
-
+#endif
         }
 
         #endregion 
@@ -273,6 +280,7 @@ namespace StatePersistence
         private void BarItem21_Click(object sender, EventArgs e)
         {
             //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
+            canUpdateLayout = false;
             AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, "Dock1");
             this.dockingManager1.LoadDockState(serializer);
         }
@@ -283,14 +291,15 @@ namespace StatePersistence
 
         #region Saved layout 
 
+#if NET9_0_OR_GREATER
         /// <summary>
-        /// To load the layout 3
+        /// To load the layout 1
         /// </summary>
-        private void BarItem15_Click(object sender, EventArgs e)
+        private void BarItem13_Click(object sender, EventArgs e)
         {
-            
             //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
-            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile,@"..\\..\\Layout2" );
+            canUpdateLayout = false;
+            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, Path.GetDirectoryName(Application.ExecutablePath) + @"\..\..\..\Layout_NET9.0\Layout1.xml");
             this.dockingManager1.LoadDockState(serializer);
         }
 
@@ -300,14 +309,23 @@ namespace StatePersistence
         private void BarItem14_Click(object sender, EventArgs e)
         {
             //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
-            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, @"..\\..\\Layout3");
+            canUpdateLayout = false;
+            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, Path.GetDirectoryName(Application.ExecutablePath) + @"\..\..\..\Layout_NET9.0\Layout2.xml");
             this.dockingManager1.LoadDockState(serializer);
         }
 
-
         /// <summary>
-        /// To load the layout 1
+        /// To load the layout 3
         /// </summary>
+        private void BarItem15_Click(object sender, EventArgs e)
+        {
+
+            //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
+            canUpdateLayout = false;
+            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, Path.GetDirectoryName(Application.ExecutablePath) + @"\..\..\..\Layout_NET9.0\Layout3.xml");
+            this.dockingManager1.LoadDockState(serializer);
+        }
+#else
         private void BarItem13_Click(object sender, EventArgs e)
         {
             //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
@@ -315,16 +333,44 @@ namespace StatePersistence
             this.dockingManager1.LoadDockState(serializer);
         }
 
+        private void BarItem14_Click(object sender, EventArgs e)
+        {
+            //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
+            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, @"..\\..\\Layout2");
+            this.dockingManager1.LoadDockState(serializer);
+        }
+
+        private void BarItem15_Click(object sender, EventArgs e)
+        {
+
+            //  AppStateSerializer serializer = new AppStateSerializer(SerializeMode.BinaryFile, "MyFile");
+            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, @"..\\..\\Layout3");
+            this.dockingManager1.LoadDockState(serializer);
+        }
+#endif
+
         #endregion
 
         #region Reset State
 
+#if NET9_0_OR_GREATER
+        public void ResetLayout()
+        {
+            canUpdateLayout = false;
+            AppStateSerializer serializer = new AppStateSerializer(SerializeMode.XMLFile, Path.GetDirectoryName(Application.ExecutablePath) + @"\..\..\..\Layout_NET9.0\Reset_Layout.xml");
+            this.dockingManager1.LoadDockState(serializer);
+        }
 
         private void BarItem22_Click(object sender, EventArgs e)
         {
-            this.dockingManager1.LoadDesignerDockState();
-
+            ResetLayout();
         }
+#else
+        private void BarItem22_Click(object sender, EventArgs e)
+        {
+            this.dockingManager1.LoadDesignerDockState();
+        }
+#endif
 
         #endregion
 

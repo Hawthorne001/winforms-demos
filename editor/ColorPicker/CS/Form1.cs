@@ -33,6 +33,7 @@ namespace ColorPicker_demo
             style.Add("Office2016Black");
             this.sfComboBox1.DataSource = style;
             this.sfComboBox1.SelectedIndex = 0;
+            this.sfComboBox1.AllowDropDownResize = false;
             this.colorPickerButton2.ColorUI.CustomColorsStretchOnResize = false;
             this.colorPickerButton2.ColorUI.UserColorsStretchOnResize = false;
             this.colorPickerButton2.ColorUISize= new Size(200, 172);

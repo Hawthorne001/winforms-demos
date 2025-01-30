@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2014
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2014. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -104,12 +104,35 @@ namespace TreeViewAdvDragDrop
 		}
 		#endregion
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
+        #region "Image Loading Methods"
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"TreeViewAdvDragDrop.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
+        #endregion
+
+
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
             Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo();
@@ -363,7 +386,11 @@ namespace TreeViewAdvDragDrop
             // 
             // leftImageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.leftImageList, "LeftImageList", 8);
+#else
             this.leftImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("leftImageList.ImageStream")));
+#endif
             this.leftImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.leftImageList.Images.SetKeyName(0, "");
             this.leftImageList.Images.SetKeyName(1, "");
@@ -373,7 +400,11 @@ namespace TreeViewAdvDragDrop
             // 
             // rightImageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.rightImageList, "RightImageList", 8);
+#else
             this.rightImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("rightImageList.ImageStream")));
+#endif
             this.rightImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.rightImageList.Images.SetKeyName(0, "");
             this.rightImageList.Images.SetKeyName(1, "");
@@ -415,7 +446,11 @@ namespace TreeViewAdvDragDrop
             // 
             // stateImageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.stateImageList, "StateImageList", 8);
+#else
             this.stateImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("stateImageList.ImageStream")));
+#endif
             this.stateImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.stateImageList.Images.SetKeyName(0, "");
             this.stateImageList.Images.SetKeyName(1, "");
@@ -446,12 +481,12 @@ namespace TreeViewAdvDragDrop
 		}
 
 		#endregion
-
-		#region Main Function Definition
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
+        
+        #region Main Function Definition
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
 		static void Main() 
 		{
             SyncfusionLicenseProvider.RegisterLicense(DemoCommon.FindLicenseKey());

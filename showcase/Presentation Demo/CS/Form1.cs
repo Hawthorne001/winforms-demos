@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -31,7 +31,10 @@ namespace PowerPointViewer
         [STAThread]
         static void Main()
         {
-			SyncfusionLicenseProvider.RegisterLicense(FindLicenseKey());
+            SyncfusionLicenseProvider.RegisterLicense(FindLicenseKey());
+            //To address the DPI related issues of PPTX to Image conversion,
+            //which occurs from chart to image (WPF) conversion library, configured the High DPI mode to PerMonitorsV2.
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
@@ -96,7 +99,7 @@ namespace PowerPointViewer
             }
             return string.Empty;
         }
-
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsOnLoad
         {
             get
@@ -108,7 +111,7 @@ namespace PowerPointViewer
                 onLoad = value;
             }
         }
-
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool OnMinimized
         {
             get

@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2015
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -36,12 +36,12 @@ namespace AlertMessageLocalization
                     #region Menu Package
 
                     case GridResourceIdentifiers.Cannotchangepartofamergedcell:
-                        return "Kann nicht von einer verbundenen Zelle changepart";
+                        return "Ein Teil einer verbundenen Zelle kann nicht geändert werden";
                     case ResourceIdentifiers.OK:
                         return "Ok";
 
                     case ResourceIdentifiers.Cancel:
-                        return "stornieren";
+                        return "Abbrechen";
                     #endregion
 
                     default:

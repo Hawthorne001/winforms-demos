@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -39,22 +39,16 @@ namespace HTMLToDoc_2005
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new Syncfusion.Windows.Forms.ButtonAdv();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button2 = new Syncfusion.Windows.Forms.ButtonAdv();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.outpuTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new Syncfusion.Windows.Forms.ButtonAdv();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.wordDocxRadioBtn = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             this.wordDocRadioBtn = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wordDocxRadioBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wordDocRadioBtn)).BeginInit();
@@ -71,18 +65,6 @@ namespace HTMLToDoc_2005
             this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(37, 350);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 22);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "Output";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -95,7 +77,7 @@ namespace HTMLToDoc_2005
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.IsBackStageButton = false;
             this.button1.KeepFocusRectangle = false;
-            this.button1.Location = new System.Drawing.Point(255, 495);
+            this.button1.Location = new System.Drawing.Point(255, 215);
             this.button1.Name = "button1";
             this.button1.Office2007ColorScheme = Syncfusion.Windows.Forms.Office2007Theme.Managed;
             this.button1.Size = new System.Drawing.Size(108, 23);
@@ -104,96 +86,58 @@ namespace HTMLToDoc_2005
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // label2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Appearance = Syncfusion.Windows.Forms.ButtonAppearance.Metro;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
-            this.button2.BeforeTouchSize = new System.Drawing.Size(112, 21);
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.IsBackStageButton = false;
-            this.button2.Location = new System.Drawing.Point(0, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 21);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "Copy Html From File";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.button2, "Select the HTML file to be converted or \r\nenter the HTML text in the textbox ");
-            this.button2.UseVisualStyle = true;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(0, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(363, 66);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Click the button below to view the Word document converted from a HTML file using" +
+    " .NET Word Library (DocIO). Please note that Microsoft Word Viewer or Microsoft Word is required to view the resultant Word document.";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.Location = new System.Drawing.Point(1, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 13);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Source Document";
             // 
             // textBox1
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(0, 107);
-            this.textBox1.Multiline = true;
+            this.textBox1.Location = new System.Drawing.Point(4, 165);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(378, 200);
-            this.textBox1.TabIndex = 70;
+            this.textBox1.Size = new System.Drawing.Size(333, 22);
+            this.textBox1.TabIndex = 75;
             // 
-            // panel2
+            // button2
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 82);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(378, 25);
-            this.panel2.TabIndex = 71;
+            this.button2.BeforeTouchSize = new System.Drawing.Size(21, 24);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.IsBackStageButton = false;
+            this.button2.Location = new System.Drawing.Point(343, 165);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(21, 24);
+            this.button2.TabIndex = 76;
+            this.button2.Text = ". . .";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button3_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.outpuTextBox);
-            this.panel4.Location = new System.Drawing.Point(7, 360);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(363, 111);
-            this.panel4.TabIndex = 73;
-            // 
-            // outpuTextBox
-            // 
-            this.outpuTextBox.Location = new System.Drawing.Point(12, 12);
-            this.outpuTextBox.Multiline = true;
-            this.outpuTextBox.Name = "outpuTextBox";
-            this.outpuTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.outpuTextBox.Size = new System.Drawing.Size(336, 83);
-            this.outpuTextBox.TabIndex = 76;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(172)))), ((int)(((byte)(178)))));
-            this.label4.Location = new System.Drawing.Point(85, 360);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(285, 1);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "label4";
-            // 
-            // button3
-            // 
-            this.button3.BeforeTouchSize = new System.Drawing.Size(20, 20);
-            this.button3.IsBackStageButton = false;
-            this.button3.Location = new System.Drawing.Point(7, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(20, 20);
-            this.button3.TabIndex = 75;
-            this.button3.Text = "+";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.wordDocxRadioBtn);
             this.groupBox1.Controls.Add(this.wordDocRadioBtn);
             this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 480);
+            this.groupBox1.Location = new System.Drawing.Point(4, 200);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(230, 43);
             this.groupBox1.TabIndex = 101;
@@ -238,15 +182,13 @@ namespace HTMLToDoc_2005
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(158)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(378, 534);
+            this.ClientSize = new System.Drawing.Size(378, 258);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.DropShadow = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -254,10 +196,8 @@ namespace HTMLToDoc_2005
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HTML to Doc";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wordDocxRadioBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wordDocRadioBtn)).EndInit();
@@ -270,16 +210,12 @@ namespace HTMLToDoc_2005
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private Syncfusion.Windows.Forms.ButtonAdv button1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel2;
         private Syncfusion.Windows.Forms.ButtonAdv button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
-        private Syncfusion.Windows.Forms.ButtonAdv button3;
-        private System.Windows.Forms.TextBox outpuTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv wordDocxRadioBtn;
         private Syncfusion.Windows.Forms.Tools.RadioButtonAdv wordDocRadioBtn;

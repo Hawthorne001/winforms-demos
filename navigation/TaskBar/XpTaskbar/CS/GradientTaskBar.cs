@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2014
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2014. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -68,6 +68,7 @@ namespace TaskBar
 		[Browsable(true),
 		Category("Appearance"),
 		Description("Gradient starting color (used at the left edge)")]		
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		public Color GradientStartColor
 		{
 			get
@@ -85,6 +86,7 @@ namespace TaskBar
 		[Browsable(true),
 		Category("Appearance"),
 		Description("Gradient ending color")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		public Color GradientEndColor
 		{
 			get
@@ -102,6 +104,7 @@ namespace TaskBar
 		[Browsable(true),
 		Category("Appearance"),
 		Description("Background image to be blended in at the bottom of the panel")]		
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		public Image BlendImage
 		{
 			get

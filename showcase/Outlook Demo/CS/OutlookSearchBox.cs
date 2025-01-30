@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -72,6 +72,7 @@ namespace OutlookDemo_2010
 
         private string m_SearchString = string.Empty;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string SearchString
         {
             get { return m_SearchString; }
@@ -82,6 +83,7 @@ namespace OutlookDemo_2010
 
         private bool m_Label1Clicked = false;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Label1Clicked
         {
             get { return m_Label1Clicked; }
@@ -94,6 +96,8 @@ namespace OutlookDemo_2010
         }
 
         private bool m_Label2Clicked = false;
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Label2Clicked
         {
             get { return m_Label2Clicked; }

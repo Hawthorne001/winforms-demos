@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2015
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -117,8 +117,8 @@ namespace AlertMessageLocalization
             string numError = "Please enter less than 10";
             if (checkBox1.Checked)
             {
-                numError = "Bitte geben Sie weniger als 10";
-                strError = "Geben Sie einen gültigen Wert";
+                numError = "Bitte geben Sie weniger als 10 ein";
+                strError = "Bitte geben Sie einen gültigen Wert ein";
             }
             long result;
             if (this.gridCtrl.Grid.CurrentCell.ColIndex != 2)

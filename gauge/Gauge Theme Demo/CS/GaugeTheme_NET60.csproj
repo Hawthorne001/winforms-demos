@@ -24,6 +24,10 @@
       <HintPath>
       </HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Office2016Theme.WinForms">
+      <HintPath>
+      </HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Office2019Theme.WinForms">
       <HintPath>
       </HintPath>

@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2005. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -41,7 +41,6 @@ namespace EssentialPDFSamples
         private Label label5;
         private CheckBox optimizeResources;
         private CheckBox MergeAccessibilityTags;
-     
 
         /// <summary>
         /// Required designer variable.
@@ -83,18 +82,18 @@ namespace EssentialPDFSamples
         private void InitializeComponent()
         {
             ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
-            btnMerge = new Button();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            txtDoc1 = new TextBox();
-            txtDoc2 = new TextBox();
-            btnBrowse1 = new Button();
-            btnBrowse2 = new Button();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            optimizeResources = new CheckBox();
+            btnMerge = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            txtDoc1 = new System.Windows.Forms.TextBox();
+            txtDoc2 = new System.Windows.Forms.TextBox();
+            btnBrowse1 = new System.Windows.Forms.Button();
+            btnBrowse2 = new System.Windows.Forms.Button();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            optimizeResources = new System.Windows.Forms.CheckBox();
             MergeAccessibilityTags = new CheckBox();
             ((ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -228,14 +227,14 @@ namespace EssentialPDFSamples
             optimizeResources.Checked = true;
             optimizeResources.CheckState = CheckState.Checked;
             optimizeResources.FlatStyle = FlatStyle.System;
-            optimizeResources.Location = new Point(18, 436);
+            optimizeResources.Location = new Point(18, 426);
             optimizeResources.Margin = new Padding(5, 6, 5, 6);
             optimizeResources.Name = "optimizeResources";
             optimizeResources.Size = new Size(243, 30);
             optimizeResources.TabIndex = 33;
             optimizeResources.Text = "Optimize PDF Resources";
             optimizeResources.UseVisualStyleBackColor = true;
-       
+          
             // 
             // MergeAccessibilityTags
             // 
@@ -250,6 +249,7 @@ namespace EssentialPDFSamples
             MergeAccessibilityTags.TabIndex = 34;
             MergeAccessibilityTags.Text = "Merge Accessibility Tags";
             MergeAccessibilityTags.UseVisualStyleBackColor = true;
+        
             // 
             // Form1
             // 
@@ -346,7 +346,7 @@ namespace EssentialPDFSamples
         private void btnBrowse1_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
-			file.Filter = "PDF Documents (*.pdf)|*.PDF";
+            file.Filter = "PDF Documents (*.pdf)|*.PDF";
 
             if (file.ShowDialog() == DialogResult.OK)
             {
@@ -399,6 +399,7 @@ namespace EssentialPDFSamples
 
             return string.Format(@"{0}{1}\PDF\{2}", fullPath, folder, fileName);
         }
+
     }
 	/// <summary>
     /// Represents a class that is used to find the licensing file for Syncfusion controls.

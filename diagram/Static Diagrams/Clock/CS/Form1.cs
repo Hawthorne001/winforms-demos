@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -24,6 +24,7 @@ using System.Runtime.Serialization;
 using Syncfusion;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
+using Syncfusion.Windows.Forms.Diagram.Controls;
 
 
 namespace Clock
@@ -65,13 +66,18 @@ namespace Clock
         {
             DiagramAppearance();
 
+            PaletteGroupBar paletteGroupBar = new PaletteGroupBar();
             // Load Palette
 #if NETCORE
-            palette = this.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\ClockSymbols.edp");
+            paletteGroupBar.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\ClockSymbols.xml");
 #else
-            palette = this.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\ClockSymbols.edp");
+            paletteGroupBar.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\ClockSymbols.xml");
 #endif
 
+            if (paletteGroupBar != null && paletteGroupBar.CurrentSymbolPalette != null)
+            {
+                palette = paletteGroupBar.CurrentSymbolPalette;
+            }
             diagram1.BeginUpdate();
             // populate Diagram with nodes
             AddingNodesToTheDrawingArea();

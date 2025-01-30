@@ -8,6 +8,7 @@
 using Syncfusion.Windows.Forms;
 using Syncfusion.Windows.Forms.Tools;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TabControlAdv_2005
@@ -31,6 +32,26 @@ namespace TabControlAdv_2005
             }
             base.Dispose(disposing);
         }
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"TabControlAdv_2005.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
 
         #region Windows Form Designer generated code
 
@@ -610,7 +631,11 @@ namespace TabControlAdv_2005
             // 
             // imageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList, "ImageList", 9);
+#else
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+#endif
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList.Images.SetKeyName(0, "user_24.png");
             this.imageList.Images.SetKeyName(1, "clip_24.png");
@@ -660,7 +685,11 @@ namespace TabControlAdv_2005
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 2);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "behaviour.gif");
             this.imageList1.Images.SetKeyName(1, "tab.png");

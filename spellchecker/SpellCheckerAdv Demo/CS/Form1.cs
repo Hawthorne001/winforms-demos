@@ -62,6 +62,7 @@ namespace SpellCheckerAdv_2012
         /// <summary>
         /// Gets or sets the ISpellCheckerAdvEditorTools interface.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public ISpellCheckerAdvEditorTools SpellEditor
         {
             get;

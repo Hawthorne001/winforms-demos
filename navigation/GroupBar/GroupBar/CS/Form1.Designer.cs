@@ -1,11 +1,13 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
 // applicable laws. 
 #endregion
 using Syncfusion.WinForms.ListView;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace GroupBarDemo_2005
 {
@@ -28,6 +30,26 @@ namespace GroupBarDemo_2005
             }
             base.Dispose(disposing);
         }
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"GroupBarDemo_2005.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
 
         #region Windows Form Designer generated code
 
@@ -194,7 +216,11 @@ namespace GroupBarDemo_2005
             // 
             // ilGroupBarLarge
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.ilGroupBarLarge, "IlGroupBarLarge", 28);
+#else
             this.ilGroupBarLarge.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilGroupBarLarge.ImageStream")));
+#endif
             this.ilGroupBarLarge.TransparentColor = System.Drawing.Color.Transparent;
             this.ilGroupBarLarge.Images.SetKeyName(0, "");
             this.ilGroupBarLarge.Images.SetKeyName(1, "");
@@ -227,7 +253,11 @@ namespace GroupBarDemo_2005
             // 
             // ilGroupBarSmall
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.ilGroupBarSmall, "IlGroupBarSmall", 32);
+#else
             this.ilGroupBarSmall.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilGroupBarSmall.ImageStream")));
+#endif
             this.ilGroupBarSmall.TransparentColor = System.Drawing.Color.Transparent;
             this.ilGroupBarSmall.Images.SetKeyName(0, "");
             this.ilGroupBarSmall.Images.SetKeyName(1, "");
@@ -538,7 +568,11 @@ namespace GroupBarDemo_2005
             // 
             // smallImageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.smallImageList, "SmallImageList", 15);
+#else
             this.smallImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smallImageList.ImageStream")));
+#endif
             this.smallImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.smallImageList.Images.SetKeyName(0, "");
             this.smallImageList.Images.SetKeyName(1, "");
@@ -596,7 +630,12 @@ namespace GroupBarDemo_2005
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 551);
             this.Controls.Add(this.splitContainerAdv1);
+#if NET6_0_OR_GREATER
+            float scaleFactor = this.DeviceDpi / 96f; 
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F / scaleFactor, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+#else
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+#endif
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(740, 545);
             this.Name = "Form1";

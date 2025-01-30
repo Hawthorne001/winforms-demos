@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -337,7 +337,7 @@ namespace EssentialXlsIOSamples
             // 
             this.viewInputTemplate.Location = new System.Drawing.Point(159, 206);
             this.viewInputTemplate.Name = "viewInputTemplate";
-            this.viewInputTemplate.Size = new System.Drawing.Size(90, 26);
+            this.viewInputTemplate.Size = new System.Drawing.Size(95, 26);
             this.viewInputTemplate.TabIndex = 68;
             this.viewInputTemplate.Text = "Input Template";
             this.viewInputTemplate.UseVisualStyleBackColor = true;

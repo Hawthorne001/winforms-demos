@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2012
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -42,16 +42,17 @@ namespace Sequence_Diagram_2005
         {
             InitializeComponent();
             //load sequence diagram
-#if !NETCORE
-            strFileName = @"..\..\..\..\..\..\common\Data\Diagram\edd\Sequence Diagram.edd";
-            diagram1.LoadBinary(@"..\..\..\..\..\..\common\Data\Diagram\edd\Sequence Diagram.edd");  
+
+#if !(NETCORE || NET50 || NET80 || NET60 || NET70 || NET90)
+            strFileName = @"..\..\..\..\..\..\common\Data\Diagram\xml\Sequence Diagram.xml";
+            diagram1.LoadXml(@"..\..\..\..\..\..\common\Data\Diagram\xml\Sequence Diagram.xml");  
             //load sequence diagram shapes into the palette
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Sequence Diagram Shapes.edp");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Sequence Diagram Shapes.xml");
 #else
-            strFileName = @"..\..\..\..\..\..\..\common\Data\Diagram\edd\Sequence Diagram.edd";
-            diagram1.LoadBinary(@"..\..\..\..\..\..\..\common\Data\Diagram\edd\Sequence Diagram.edd");
+            strFileName = @"..\..\..\..\..\..\..\common\Data\Diagram\xml\Sequence Diagram.xml";
+            diagram1.LoadXml(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Sequence Diagram.xml");
             //load sequence diagram shapes into the palette
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Sequence Diagram Shapes.edp");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Sequence Diagram Shapes.xml");
 #endif
             diagram1.Model.LineStyle.LineColor = Color.LightGray;
             //diagram view settings
@@ -140,19 +141,29 @@ namespace Sequence_Diagram_2005
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            saveFileDialog.FilterIndex = 0;
             if (diagram1.Model.Modified)
             {
                 if (strFileName == string.Empty)
                 {
-                    saveFileDialog.Filter = "EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml";
+                    saveFileDialog.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd";
                     if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
                     {
                         if (saveFileDialog.FilterIndex == 1)
-                            diagram1.SaveBinary(saveFileDialog.FileName);
-#if !NETCORE
-                        else if (saveFileDialog.FilterIndex == 2)
-                            diagram1.SaveSoap(saveFileDialog.FileName);
+                        {
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                            diagram1.SaveXml(saveFileDialog.FileName);
+                            this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(saveFileDialog.FileName);
 #endif
+                        }
+                        else if (saveFileDialog.FilterIndex == 2)
+                        {
+                            diagram1.SaveBinary(saveFileDialog.FileName);
+                        }
+
                         strFileName = saveFileDialog.FileName;
                     }
                 }
@@ -162,10 +173,19 @@ namespace Sequence_Diagram_2005
                     FileInfo fileInfo = new FileInfo(strFileName);
                     if (fileInfo.Extension == ".edd")
                         diagram1.SaveBinary(strFileName);
-#if !NETCORE
+
                     if (fileInfo.Extension == ".xml")
-                        diagram1.SaveSoap(strFileName);
+                    {
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                        diagram1.SaveXml(strFileName);
+                        this.diagram1.Refresh();
+#else
+                         diagram1.SaveSoap(strFileName);
 #endif
+
+                    }
+
                 }
             }
         }
@@ -179,7 +199,7 @@ namespace Sequence_Diagram_2005
                     btnSave_Click(sender, e);
                 }
             }
-            else
+            //else
             {
                 //Open a serialized binary/xml diagram document
                 if (openFileDialog.ShowDialog(this) == DialogResult.OK)
@@ -188,10 +208,18 @@ namespace Sequence_Diagram_2005
                     strFileName = openFileDialog.FileName;
                     if (fileInfo.Extension == ".edd")
                         diagram1.LoadBinary(strFileName);
-#if !NETCORE
+
                     if (fileInfo.Extension == ".xml")
+                    {
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                        diagram1.LoadXml(strFileName);
+                        this.diagram1.Refresh();
+#else
                         diagram1.LoadSoap(strFileName);
 #endif
+                    }
+
                 }
             }
             strFileName = openFileDialog.FileName;
@@ -201,13 +229,25 @@ namespace Sequence_Diagram_2005
         {
             //Save as the diagram with given file format
             saveAsFileDialog.FileName = "Diagram";
-            saveAsFileDialog.Filter = "EDD file(*.edd)|*.edd";
+            saveAsFileDialog.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd";
             if (saveAsFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-#if !NETCORE
-                diagram1.SaveSoap(saveAsFileDialog.FileName);
-                strFileName = saveAsFileDialog.FileName;
+                if (saveAsFileDialog.FilterIndex == 1)
+                {
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                    diagram1.SaveXml(saveAsFileDialog.FileName);
+                    this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(saveAsFileDialog.FileName);
 #endif
+                }
+                else if (saveAsFileDialog.FilterIndex == 2)
+                {
+                    diagram1.SaveBinary(saveAsFileDialog.FileName);
+                }
+
+                strFileName = saveAsFileDialog.FileName;
             }
         }
 

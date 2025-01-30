@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -53,9 +53,9 @@ namespace DataSourceBinding
             binding1.DefaultNode = null;
             binding1.Diagram = this.diagram1;
             binding1.Id = null;
-#if !NETCORE
-            binding1.Label = ((System.Collections.Generic.List<string>)(resources.GetObject("binding1.Label")));
-#endif
+
+            binding1.Label = new System.Collections.Generic.List<string>();
+
             binding1.ParentId = null;
             this.diagram1.Binding = binding1;
             this.diagram1.Controller.PasteOffset = new System.Drawing.SizeF(DpiAware.LogicalToDeviceUnits(10F), DpiAware.LogicalToDeviceUnits(10F));
@@ -67,7 +67,7 @@ namespace DataSourceBinding
             this.diagram1.Margin = new System.Windows.Forms.Padding((int)DpiAware.LogicalToDeviceUnits(2));
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size((int)DpiAware.LogicalToDeviceUnits(832), (int)DpiAware.LogicalToDeviceUnits(544));
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace DataSourceBinding
             this.diagram1.View.ClientRectangle = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             this.diagram1.VScroll = true;
             // 

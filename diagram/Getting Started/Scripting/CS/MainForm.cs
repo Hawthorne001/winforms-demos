@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2012
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -41,12 +41,10 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Scripting
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton runToolStripButton;
-        private System.Windows.Forms.ImageList ImageList;
         private Tools.GroupBarItem groupBarItemTestSymbols;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private ResourceManager resStringMgr = null;
-        private ImageList imagrList1;
         private System.ComponentModel.IContainer components = null;
         private Panel panel1;
         private ToolStripButton edittToolStripButton;
@@ -115,7 +113,6 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Scripting
             this.stopToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.imagrList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paletteGroupBar1 = new Syncfusion.Windows.Forms.Diagram.Controls.PaletteGroupBar(this.components);
@@ -224,17 +221,6 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Scripting
             this.saveFileDialog1.Filter = "Essential Diagram Files|*.edd|All files|*.*";
             this.saveFileDialog1.Title = "Save Diagram";
             // 
-            // imagrList1
-            // 
-            this.imagrList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imagrList1.ImageStream")));
-            this.imagrList1.TransparentColor = System.Drawing.Color.Fuchsia;
-            this.imagrList1.Images.SetKeyName(0, "");
-            this.imagrList1.Images.SetKeyName(1, "");
-            this.imagrList1.Images.SetKeyName(2, "");
-            this.imagrList1.Images.SetKeyName(3, "");
-            this.imagrList1.Images.SetKeyName(4, "palette_groupbar.png");
-            this.imagrList1.Images.SetKeyName(5, "property_editor.png");
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(240)))));
@@ -289,7 +275,7 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Scripting
             this.diagram1.Location = new System.Drawing.Point(0, 0);
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(415, 416);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 0;
@@ -301,7 +287,7 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Scripting
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
             this.diagram1.View.Grid.Visible = false;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             // 
             // model1
@@ -470,7 +456,7 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.Scripting
         private void MainForm_Load(object sender, EventArgs e)
         {
             DiagramAppearance();           
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Test Symbol.edp");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Test Symbol.xml");
             GroupBarAppearance();
         }
         

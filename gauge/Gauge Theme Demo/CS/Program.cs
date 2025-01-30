@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -27,6 +27,7 @@ namespace GaugeTheme_2010
 			SyncfusionLicenseProvider.RegisterLicense(DemoCommon.FindLicenseKey());
             SkinManager.LoadAssembly(typeof(Office2019Theme).Assembly);
             SkinManager.LoadAssembly(typeof(HighContrastTheme).Assembly);
+            SkinManager.LoadAssembly(typeof(Syncfusion.WinForms.Themes.Office2016Theme).Assembly);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

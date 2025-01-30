@@ -1,11 +1,13 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
 // applicable laws. 
 #endregion
 using Syncfusion.WinForms.Input;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace CustomControls_2005
 {
@@ -970,7 +972,11 @@ namespace CustomControls_2005
             // 
             // LeftRightimageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.LeftRightimageList, "LeftRightImageList", 9);
+#else
             this.LeftRightimageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("LeftRightimageList.ImageStream")));
+#endif
             this.LeftRightimageList.TransparentColor = System.Drawing.Color.Transparent;
             this.LeftRightimageList.Images.SetKeyName(0, "AlignTableCellMiddleLeftJustHS.png");
             this.LeftRightimageList.Images.SetKeyName(1, "RadialChartHS.png");
@@ -1347,7 +1353,11 @@ namespace CustomControls_2005
             // 
             // StateimageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.StateimageList, "StateImageList", 9);
+#else
             this.StateimageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("StateimageList.ImageStream")));
+#endif
             this.StateimageList.TransparentColor = System.Drawing.Color.Transparent;
             this.StateimageList.Images.SetKeyName(0, "flag_mexico.png");
             this.StateimageList.Images.SetKeyName(1, "flag_canada.png");

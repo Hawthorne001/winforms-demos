@@ -6,7 +6,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>Serialization</AssemblyName>
     <RootNamespace>Serialization</RootNamespace>
-    <DefineConstants>NETCORE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET70</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFrameworkVersion>
     </TargetFrameworkVersion>

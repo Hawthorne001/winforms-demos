@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -42,10 +42,11 @@ namespace Serialization
             this.diagram1.Model = this.model1;
             this.FileName = "Diagram1";
             // Load Palette
-#if !NETCORE
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+
+#if !(NET60 || NET70 || NET80 || NET90)
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #else
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #endif
             Diagram();
         }
@@ -81,6 +82,8 @@ namespace Serialization
             diagram1.Model.AppendChild(lineconnector);
             Syncfusion.Windows.Forms.Diagram.LineConnector lineconnector2 = new Syncfusion.Windows.Forms.Diagram.LineConnector(new System.Drawing.PointF(100, 150), new System.Drawing.PointF(100, 250));
             diagram1.Model.AppendChild(lineconnector2);
+            decision.CentralPort.TryConnect(lineconnector2.TailEndPoint);
+            internalstorage.CentralPort.TryConnect(lineconnector2.HeadEndPoint);
         }
         /// <summary>
         /// Change's the appearance of the Diagram 
@@ -156,20 +159,29 @@ namespace Serialization
 
         private void openToolStripButton_Click_1(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml";
+            openFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd";
             if (this.openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 this.FileName = this.openFileDialog1.FileName;
-                switch (saveFileDialog1.FilterIndex)
+
+                switch (this.openFileDialog1.FilterIndex)
                 {
                     case 1:
-                        diagram1.LoadBinary(this.FileName);
-                        break;
-                    case 2:
-#if !NETCORE
+
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                        diagram1.LoadXml(this.FileName);
+#else
                         diagram1.LoadSoap(this.FileName);
 #endif
+
                         break;
+                    case 2:
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5 || SyncfusionFramework4_0
+                        diagram1.LoadBinary(this.FileName);
+#endif
+                        break;
+                 
                 }
                 this.promptOnSave = false;
                 this.diagram1.Refresh();
@@ -181,20 +193,27 @@ namespace Serialization
             if (this.promptOnSave)
             {
                 this.saveFileDialog1.FileName = this.fileName;
-                saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml";
+                saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd";
                 if (this.saveFileDialog1.ShowDialog(this) == DialogResult.OK)
                 {
                     this.FileName = this.saveFileDialog1.FileName;
                     switch (saveFileDialog1.FilterIndex)
                     {
                         case 1:
-                            diagram1.SaveBinary(this.FileName);
-                            break;
-                        case 2:
-#if !NETCORE
-                            diagram1.SaveSoap(this.FileName);
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                            diagram1.SaveXml(this.FileName);
+                            this.diagram1.Refresh();
+#else
+                this.diagram1.SaveSoap(this.fileName);
 #endif
                             break;
+                        case 2:
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5 || SyncfusionFramework4_0
+                            diagram1.SaveBinary(this.FileName);
+#endif
+                            break;
+                        
                     }
                 }
                 this.promptOnSave = false;
@@ -203,10 +222,16 @@ namespace Serialization
             {
                 FileInfo fi = new FileInfo(this.fileName);
                 if (fi.Extension == ".edp")
-                    this.diagram1.SaveBinary(this.fileName);
-#if !NETCORE
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5 || SyncfusionFramework4_0
+                    diagram1.SaveBinary(this.FileName);
+#endif
                 else if (fi.Extension == ".xml")
-                    this.diagram1.SaveSoap(this.fileName);
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                            diagram1.SaveXml(this.FileName);
+                            this.diagram1.Refresh();
+#else
+                this.diagram1.SaveSoap(this.fileName);
 #endif
 
             }
@@ -216,20 +241,27 @@ namespace Serialization
         private void saveAsToolStripButton_Click(object sender, EventArgs e)
         {
             this.saveFileDialog1.FileName = this.fileName;
-            saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml";
+            saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd";
             if (this.saveFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
                 this.FileName = this.saveFileDialog1.FileName;
                 switch (saveFileDialog1.FilterIndex)
                 {
                     case 1:
-                        diagram1.SaveBinary(this.FileName);
-                        break;
-                    case 2:
-#if !NETCORE
-                        diagram1.SaveSoap(this.FileName);
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                        diagram1.SaveXml(this.FileName);
+                        this.diagram1.Refresh();
+#else
+                this.diagram1.SaveSoap(this.fileName);
 #endif
                         break;
+                    case 2:
+#if NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5 || SyncfusionFramework4_0
+                        diagram1.SaveBinary(this.FileName);
+#endif
+                        break;
+                    
                 }
             }
         }      

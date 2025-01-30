@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2007
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2007. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -230,9 +230,38 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             }
         }
 
-        public void OpenFile( string strFileName ) {
-            diagramComponent.LoadBinary( strFileName );           
-            this.FileName = strFileName;
+        public void OpenFile(string strFileName)
+        {
+            FileInfo fi = new FileInfo(strFileName);
+
+            try
+            {
+                if (fi.Extension == ".edd")
+                {
+                    // If the file is an .edd file, load it using LoadBinary
+                    diagramComponent.LoadBinary(strFileName);
+                    diagramComponent.Refresh();
+                }
+                else if (fi.Extension == ".xml")
+                {
+#if NETCORE || NET50 || NET60 || NET70 || NET80 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+                    // If the file is an .xml file, load it using LoadXml for supported frameworks
+                    diagramComponent.LoadXml(strFileName);
+                    diagramComponent.Refresh();
+#endif
+                }
+                else
+                {
+                    MessageBox.Show("Unsupported file format.");
+                    return;
+                }
+
+                this.FileName = strFileName;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening file - " + ex.Message);
+            }
         }
 
         public void SaveFile( ) {
@@ -261,26 +290,42 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             {
                 try
                 {
-                    diagramComponent.SaveBinary( oStream );
-                    // Save the DiagramScript object to the serialization stream along with the diagram document
-#pragma warning disable SYSLIB0011
-                    BinaryFormatter formatter = new BinaryFormatter();
-#pragma warning restore SYSLIB0011
-                    formatter.Binder = Syncfusion.Runtime.Serialization.AppStateSerializer.CustomBinder;
-                    formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
-#pragma warning disable SYSLIB0011
-                    formatter.Serialize( oStream, this.scriptingMgr.Script );
-#pragma warning restore SYSLIB0011
+                    FileInfo fi = new FileInfo(strFileName);
+
+                    // Check if the file extension is .edd for binary serialization
+                    if (fi.Extension == ".edd")
+                    {
+                        // Save as binary for .edd files
+                        diagramComponent.SaveBinary(oStream);
+
+#if !(NET6_0_OR_GREATER)
+                // BinaryFormatter is used for frameworks before .NET 9
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Binder = Syncfusion.Runtime.Serialization.AppStateSerializer.CustomBinder;
+                formatter.AssemblyFormat = FormatterAssemblyStyle.Simple;
+                formatter.Serialize(oStream, this.scriptingMgr.Script);
+#else
+                        MessageBox.Show("BinaryFormatter is not supported in .NET 9 or later.");
+#endif
+                    }
+                    else
+                    {
+                        // Save as XML for all other file types
+#if NETCORE || NET50 || NET60 || NET70 || NET80 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+                        diagramComponent.SaveXml(oStream);
+                        this.diagramComponent.Refresh();
+#endif
+                    }
 
                     this.FileName = strFileName;
                 }
-                catch ( Exception ex )
+                catch (Exception ex)
                 {
-                    MessageBox.Show( "Serialization error - " + ex.Message );
+                    MessageBox.Show("Serialization error - " + ex.Message);
                 }
                 finally
                 {
-                    oStream.Close( );
+                    oStream.Close();
                 }
             }
         }
@@ -467,87 +512,8 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             // 
             // smBarItemImages
             // 
-            this.smBarItemImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smBarItemImages.ImageStream")));
+            LoadImages(this.smBarItemImages, "smBarItemImages");
             this.smBarItemImages.TransparentColor = System.Drawing.Color.Fuchsia;
-            this.smBarItemImages.Images.SetKeyName(0, "");
-            this.smBarItemImages.Images.SetKeyName(1, "");
-            this.smBarItemImages.Images.SetKeyName(2, "");
-            this.smBarItemImages.Images.SetKeyName(3, "");
-            this.smBarItemImages.Images.SetKeyName(4, "");
-            this.smBarItemImages.Images.SetKeyName(5, "");
-            this.smBarItemImages.Images.SetKeyName(6, "");
-            this.smBarItemImages.Images.SetKeyName(7, "");
-            this.smBarItemImages.Images.SetKeyName(8, "");
-            this.smBarItemImages.Images.SetKeyName(9, "");
-            this.smBarItemImages.Images.SetKeyName(10, "");
-            this.smBarItemImages.Images.SetKeyName(11, "");
-            this.smBarItemImages.Images.SetKeyName(12, "");
-            this.smBarItemImages.Images.SetKeyName(13, "");
-            this.smBarItemImages.Images.SetKeyName(14, "");
-            this.smBarItemImages.Images.SetKeyName(15, "");
-            this.smBarItemImages.Images.SetKeyName(16, "");
-            this.smBarItemImages.Images.SetKeyName(17, "");
-            this.smBarItemImages.Images.SetKeyName(18, "");
-            this.smBarItemImages.Images.SetKeyName(19, "");
-            this.smBarItemImages.Images.SetKeyName(20, "");
-            this.smBarItemImages.Images.SetKeyName(21, "");
-            this.smBarItemImages.Images.SetKeyName(22, "");
-            this.smBarItemImages.Images.SetKeyName(23, "");
-            this.smBarItemImages.Images.SetKeyName(24, "");
-            this.smBarItemImages.Images.SetKeyName(25, "");
-            this.smBarItemImages.Images.SetKeyName(26, "");
-            this.smBarItemImages.Images.SetKeyName(27, "");
-            this.smBarItemImages.Images.SetKeyName(28, "");
-            this.smBarItemImages.Images.SetKeyName(29, "");
-            this.smBarItemImages.Images.SetKeyName(30, "");
-            this.smBarItemImages.Images.SetKeyName(31, "");
-            this.smBarItemImages.Images.SetKeyName(32, "");
-            this.smBarItemImages.Images.SetKeyName(33, "");
-            this.smBarItemImages.Images.SetKeyName(34, "");
-            this.smBarItemImages.Images.SetKeyName(35, "");
-            this.smBarItemImages.Images.SetKeyName(36, "");
-            this.smBarItemImages.Images.SetKeyName(37, "");
-            this.smBarItemImages.Images.SetKeyName(38, "");
-            this.smBarItemImages.Images.SetKeyName(39, "");
-            this.smBarItemImages.Images.SetKeyName(40, "");
-            this.smBarItemImages.Images.SetKeyName(41, "");
-            this.smBarItemImages.Images.SetKeyName(42, "");
-            this.smBarItemImages.Images.SetKeyName(43, "");
-            this.smBarItemImages.Images.SetKeyName(44, "");
-            this.smBarItemImages.Images.SetKeyName(45, "");
-            this.smBarItemImages.Images.SetKeyName(46, "");
-            this.smBarItemImages.Images.SetKeyName(47, "");
-            this.smBarItemImages.Images.SetKeyName(48, "");
-            this.smBarItemImages.Images.SetKeyName(49, "");
-            this.smBarItemImages.Images.SetKeyName(50, "");
-            this.smBarItemImages.Images.SetKeyName(51, "");
-            this.smBarItemImages.Images.SetKeyName(52, "");
-            this.smBarItemImages.Images.SetKeyName(53, "");
-            this.smBarItemImages.Images.SetKeyName(54, "");
-            this.smBarItemImages.Images.SetKeyName(55, "");
-            this.smBarItemImages.Images.SetKeyName(56, "");
-            this.smBarItemImages.Images.SetKeyName(57, "");
-            this.smBarItemImages.Images.SetKeyName(58, "");
-            this.smBarItemImages.Images.SetKeyName(59, "");
-            this.smBarItemImages.Images.SetKeyName(60, "");
-            this.smBarItemImages.Images.SetKeyName(61, "");
-            this.smBarItemImages.Images.SetKeyName(62, "");
-            this.smBarItemImages.Images.SetKeyName(63, "");
-            this.smBarItemImages.Images.SetKeyName(64, "");
-            this.smBarItemImages.Images.SetKeyName(65, "");
-            this.smBarItemImages.Images.SetKeyName(66, "");
-            this.smBarItemImages.Images.SetKeyName(67, "");
-            this.smBarItemImages.Images.SetKeyName(68, "");
-            this.smBarItemImages.Images.SetKeyName(69, "");
-            this.smBarItemImages.Images.SetKeyName(70, "");
-            this.smBarItemImages.Images.SetKeyName(71, "");
-            this.smBarItemImages.Images.SetKeyName(72, "");
-            this.smBarItemImages.Images.SetKeyName(73, "");
-            this.smBarItemImages.Images.SetKeyName(74, "");
-            this.smBarItemImages.Images.SetKeyName(75, "");
-            this.smBarItemImages.Images.SetKeyName(76, "PolylineLink.bmp");
-            this.smBarItemImages.Images.SetKeyName(77, "pencil.png");
-            this.smBarItemImages.Images.SetKeyName(78, "16x16.png");
             // 
             // mnuAlgn
             // 
@@ -1159,7 +1125,8 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             this.barItemCircularArc.CategoryIndex = 0;
             this.barItemCircularArc.CustomTextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barItemCircularArc.ID = "CircularArc";
-            this.barItemCircularArc.Image = ((Syncfusion.Windows.Forms.Tools.XPMenus.ImageExt)(resources.GetObject("barItemCircularArc.Image")));
+            this.barItemCircularArc.ImageIndex = 79;
+            this.barItemCircularArc.ImageList = this.smBarItemImages;
             this.barItemCircularArc.ShowToolTipInPopUp = false;
             this.barItemCircularArc.Tag = "CircularArcTool";
             this.barItemCircularArc.Text = "CircularArc";
@@ -1171,7 +1138,8 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             this.barItemSemiCircle.CategoryIndex = 0;
             this.barItemSemiCircle.CustomTextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barItemSemiCircle.ID = "SemiCircle";
-            this.barItemSemiCircle.Image = ((Syncfusion.Windows.Forms.Tools.XPMenus.ImageExt)(resources.GetObject("barItemSemiCircle.Image")));
+            this.barItemSemiCircle.ImageIndex = 80;
+            this.barItemSemiCircle.ImageList = this.smBarItemImages;
             this.barItemSemiCircle.ShowToolTipInPopUp = false;
             this.barItemSemiCircle.Tag = "SemiCircle";
             this.barItemSemiCircle.Text = "SemiCircle";
@@ -1943,7 +1911,7 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             this.diagramComponent.Location = new System.Drawing.Point(0, 0);
             this.diagramComponent.Model = null;
             this.diagramComponent.Name = "diagramComponent";
-            this.diagramComponent.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagramComponent.ScrollVirtualBounds")));
+            this.diagramComponent.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagramComponent.Size = new System.Drawing.Size(544, 414);
             this.diagramComponent.SmartSizeBox = false;
             this.diagramComponent.TabIndex = 0;
@@ -1953,19 +1921,18 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             this.diagramComponent.View.ClientRectangle = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.diagramComponent.View.Controller = this.diagramComponent.Controller;
             this.diagramComponent.View.Grid.MinPixelSpacing = 4F;
-            this.diagramComponent.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagramComponent.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagramComponent.VScroll = true;
             // 
             // openDiagramDialog
             // 
-            this.openDiagramDialog.Filter = "Diagram Files|*.edd|All files|*.*";
+            this.openDiagramDialog.Filter = "XML Files|*.xml|EDD Files|*.edd|All files|*.*";
             this.openDiagramDialog.Title = "Open Diagram";
             // 
             // saveDiagramDialog
             // 
             this.saveDiagramDialog.FileName = "doc1";
-            this.saveDiagramDialog.Filter = "Diagram files|*.edd|EMF file|*.emf|GIF file|*.gif|PNG file|*.png|BMP file|*.bmp|J" +
-                "PEG file|*.jpeg,*.jpg|TIFF file|*.tiff|SVG file|*.svg|All files|*.*";
+            this.saveDiagramDialog.Filter = "XML Files|*.xml|EDD Files|*.edd|EMF file|*.emf|GIF file|*.gif|PNG file|*.png|BMP file|*.bmp|JPEG file|*.jpeg;*.jpg|TIFF file|*.tiff|SVG file|*.svg|All files|*.*";
             // 
             // DiagramForm
             // 
@@ -1994,9 +1961,39 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
         {
             this.diagramComponent.ActivateTool("PencilTool");
         }
-#endregion
 
-#region Class events
+        void LoadImages(ImageList imageList, String filename)
+        {
+            string folderPath = string.Empty;
+#if NETCORE
+            folderPath = Path.Combine(@"..\..\..\Resources", filename);
+#else
+            folderPath = Path.Combine(@"..\..\Resources", filename);
+#endif
+            if (!Directory.Exists(folderPath))
+            {
+                throw new DirectoryNotFoundException("Directory does not exist: " + folderPath);
+            }
+            int i = 0;
+            foreach (string imagePath in Directory.GetFiles(folderPath))
+            {
+                try
+                {
+                    using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                    {
+                        Image image = Image.FromStream(fs);
+                        imageList.Images.Add(image);
+                        imageList.Images.SetKeyName(i, "");
+                        i++;
+                    }
+                }
+                catch { }
+            }
+        }
+
+        #endregion
+
+        #region Class events
 
 #region DiagramForm
 

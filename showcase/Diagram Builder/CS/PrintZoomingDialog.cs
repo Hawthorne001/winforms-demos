@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2007
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2007. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -273,6 +273,7 @@ namespace DiagramTool
 
 		#region Public Properties
 
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public string SheetsDown
 		{
 			get
@@ -285,7 +286,7 @@ namespace DiagramTool
 			}
 		}
 
-
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public string SheetsAcross
 		{
 			get

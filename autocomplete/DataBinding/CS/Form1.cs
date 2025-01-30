@@ -18,6 +18,7 @@ using Syncfusion.Licensing;
 using System.Collections.Specialized;
 using Syncfusion.Runtime.Serialization;
 using Syncfusion.WinForms.Controls;
+using System.Collections.Generic;
 
 namespace DataBindingDemo
 {
@@ -40,8 +41,6 @@ namespace DataBindingDemo
         private ComboBoxAdv autoComplete_Combo;
         private Label label4;
         private ComboBoxAdv format_Combo;
-        private SfButton btn_serialize;
-        private SfButton btn_deserialize;
         private Label label5;
         private System.ComponentModel.IContainer components = null;
 
@@ -94,11 +93,6 @@ namespace DataBindingDemo
             this.dataSource_ComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             this.format_Combo.DropDownStyle = ComboBoxStyle.DropDownList;
             this.autoComplete_Combo.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            this.btn_serialize.ThemeName = "Office2019Colorful";
-            this.btn_deserialize.ThemeName = "Office2019Colorful";
-            this.btn_deserialize.FlatStyle = FlatStyle.Flat;
-            this.btn_serialize.FlatStyle = FlatStyle.Flat;
 
             //ForeColor
             this.label1.ForeColor = ColorTranslator.FromHtml("#444444");
@@ -171,8 +165,6 @@ namespace DataBindingDemo
 		{
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_deserialize = new Syncfusion.WinForms.Controls.SfButton();
-            this.btn_serialize = new Syncfusion.WinForms.Controls.SfButton();
             this.label4 = new System.Windows.Forms.Label();
             this.format_Combo = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.autoComplete_Combo = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
@@ -202,8 +194,6 @@ namespace DataBindingDemo
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_deserialize);
-            this.panel1.Controls.Add(this.btn_serialize);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.format_Combo);
             this.panel1.Controls.Add(this.autoComplete_Combo);
@@ -215,30 +205,6 @@ namespace DataBindingDemo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 421);
             this.panel1.TabIndex = 1;
-            // 
-            // btn_deserialize
-            // 
-            this.btn_deserialize.AccessibleName = "Button";
-            this.btn_deserialize.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btn_deserialize.Location = new System.Drawing.Point(127, 228);
-            this.btn_deserialize.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_deserialize.Name = "btn_deserialize";
-            this.btn_deserialize.Size = new System.Drawing.Size(123, 23);
-            this.btn_deserialize.TabIndex = 7;
-            this.btn_deserialize.Text = "Deserialize";
-            this.btn_deserialize.Click += new System.EventHandler(this.btn_deserialize_Click);
-            // 
-            // btn_serialize
-            // 
-            this.btn_serialize.AccessibleName = "Button";
-            this.btn_serialize.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btn_serialize.Location = new System.Drawing.Point(127, 180);
-            this.btn_serialize.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_serialize.Name = "btn_serialize";
-            this.btn_serialize.Size = new System.Drawing.Size(123, 23);
-            this.btn_serialize.TabIndex = 6;
-            this.btn_serialize.Text = "Serialize";
-            this.btn_serialize.Click += new System.EventHandler(this.btn_serialize_Click);
             // 
             // label4
             // 
@@ -654,6 +620,8 @@ namespace DataBindingDemo
             autoComplete1.DataSource = null;
 #if !NETCORE
             autoComplete1.DataSource = new Customer();
+#else
+            autoComplete1.DataSource = GetSampleCustomers(); 
 #endif
             autoComplete1.RefreshColumns();
             this.autoComplete1.Columns[2].MatchingColumn = true;
@@ -671,7 +639,34 @@ namespace DataBindingDemo
                 column.MinColumnWidth = 150;
             }
         }
-#endregion
+
+        private List<OrderInfo> GetSampleCustomers()
+        {
+            return new List<OrderInfo>
+        {
+        new OrderInfo { OrderID = 101, CustomerID = "CUS001", ShipName = "Sunrise Traders", ShipAddress = "123 Elm Street", ShipCity = "New York", ShipPostalCode = "10001", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 102, CustomerID = "CUS002", ShipName = "Oceanic Enterprises", ShipAddress = "456 Oak Avenue", ShipCity = "Los Angeles", ShipPostalCode = "90001", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 103, CustomerID = "CUS003", ShipName = "Global Supplies Ltd.", ShipAddress = "789 Pine Road", ShipCity = "Chicago", ShipPostalCode = "60601", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 104, CustomerID = "CUS004", ShipName = "Horizon Exports", ShipAddress = "321 Maple Lane", ShipCity = "Houston", ShipPostalCode = "77001", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 105, CustomerID = "CUS005", ShipName = "Northern Lights Logistics", ShipAddress = "654 Birch Boulevard", ShipCity = "Seattle", ShipPostalCode = "98101", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 106, CustomerID = "CUS006", ShipName = "Eastern Cargo Co.", ShipAddress = "987 Cedar Drive", ShipCity = "Boston", ShipPostalCode = "02108", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 107, CustomerID = "CUS007", ShipName = "Pacific Trading Corp.", ShipAddress = "135 Palm Street", ShipCity = "San Francisco", ShipPostalCode = "94101", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 108, CustomerID = "CUS008", ShipName = "Summit Wholesale", ShipAddress = "246 Spruce Court", ShipCity = "Denver", ShipPostalCode = "80201", ShipCountry = "USA" },
+        new OrderInfo { OrderID = 109, CustomerID = "CUS009", ShipName = "Aspen Ventures", ShipAddress = "369 Aspen Way", ShipCity = "Salt Lake City", ShipPostalCode = "84101", ShipCountry = "USA" }
+        };
+        }
+
+        public class OrderInfo
+        {
+            public int OrderID { get; set; }
+            public string CustomerID { get; set; }
+            public string ShipName { get; set; }
+            public string ShipAddress { get; set; }
+            public string ShipCity { get; set; }
+            public string ShipPostalCode { get; set; }
+            public string ShipCountry { get; set; }
+        }
+        #endregion
 
         string autoCompleteMode = "Auto Suggest";
         private void setAutoCompleteMode(AutoComplete autoComplete)
@@ -702,66 +697,6 @@ namespace DataBindingDemo
         {
             ComboBoxAdv comboBox = sender as ComboBoxAdv;
             formatToSerialize = comboBox.SelectedItem.ToString();
-        }
-
-        MemoryStream ms = new MemoryStream();
-        private void btn_serialize_Click(object sender, EventArgs e)
-        {
-            autoComplete1.AutoSerialize = true;
-            AppStateSerializer aser = new AppStateSerializer(SerializeMode.XMLFile, "info.xml");
-            switch (formatToSerialize)
-            {
-                case "XML":
-                    autoComplete1.CategoryName = "XmlData";
-                    aser = new AppStateSerializer(SerializeMode.XMLFile, "info.xml");
-                    this.autoComplete1.SaveCurrentState(aser);
-                    break;
-                case "Binary":
-                    autoComplete1.CategoryName = "BinaryData";
-                    aser = new AppStateSerializer(SerializeMode.BinaryFile, "binaryfile");
-                    this.autoComplete1.SaveCurrentState(aser);
-                    aser.PersistNow();
-                    break;
-                case "Memory Stream":
-                    autoComplete1.CategoryName = "MemoryStream";
-                    aser = new AppStateSerializer(SerializeMode.BinaryFmtStream, ms);
-                    this.autoComplete1.SaveCurrentState(aser);
-                    aser.PersistNow();
-                    break;
-            }
-
-            MessageBoxAdv.ThemeName = "Office2019Colorful";
-            string message = "AutoComplete data are saved successfully.";
-            MessageBoxAdv.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btn_deserialize_Click(object sender, EventArgs e)
-        {
-            AppStateSerializer aser = new AppStateSerializer(SerializeMode.XMLFile, "info.xml");
-            switch (formatToSerialize)
-            {
-                case "XML":
-                    autoComplete1.CategoryName = "XmlData";
-                    aser = new AppStateSerializer(SerializeMode.XMLFile, "info.xml");
-                    this.autoComplete1.LoadCurrentState(aser);
-                    break;
-                case "Binary":
-                    autoComplete1.CategoryName = "BinaryData";
-                    aser = new AppStateSerializer(SerializeMode.BinaryFile, "binaryfile.bin");
-                    this.autoComplete1.LoadCurrentState(aser);
-                    break;
-                case "Memory Stream":
-                    autoComplete1.CategoryName = "MemoryStream";
-                    MemoryStream ms1 = new MemoryStream(ms.ToArray());
-                    ms1.Position = 0;
-                    aser = new AppStateSerializer(SerializeMode.BinaryFmtStream, ms1);
-                    this.autoComplete1.LoadCurrentState(aser);
-                    break;
-            }
-
-            MessageBoxAdv.ThemeName = "Office2019Colorful";
-            string message = "Data are loaded successfully in AutoComplete.";
-            MessageBoxAdv.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

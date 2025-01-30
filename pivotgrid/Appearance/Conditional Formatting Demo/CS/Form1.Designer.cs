@@ -1,11 +1,13 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2018
+// Copyright Syncfusion Inc. 2001 - 2018. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
 // applicable laws. 
 #endregion
 using Syncfusion.Windows.Forms;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ConditionalFormating
 {
@@ -984,7 +986,11 @@ namespace ConditionalFormating
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 17);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "ThreeTriangle.png");
             this.imageList1.Images.SetKeyName(1, "ThreeTrafficLightsUnrimmed.png");
@@ -1104,7 +1110,7 @@ namespace ConditionalFormating
         }
 
         #endregion
-
+        
         private Syncfusion.Windows.Forms.PivotAnalysis.PivotGridControl pivotGridControl1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblFormatStyle;

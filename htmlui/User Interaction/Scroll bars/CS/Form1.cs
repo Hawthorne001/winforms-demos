@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -396,10 +396,13 @@ namespace Syncfusion.Windows.Forms.HTMLUI.Samples
         /// </summary>
         private void buttonAdv1_Click(object sender, EventArgs e)
         {
-            handleExpand = true;
-            this.treeView1.SelectedNode = this.treeView1.Nodes[0].Nodes[0];
-            this.treeView1.SelectedNode = this.treeView1.Nodes[0];
-            handleExpand = false;
+            if (this.treeView1.Nodes[0].Nodes.Count > 0)
+            {
+                handleExpand = true;
+                this.treeView1.SelectedNode = this.treeView1.Nodes[0].Nodes[0];
+                this.treeView1.SelectedNode = this.treeView1.Nodes[0];
+                handleExpand = false;
+            }
         }
 
 	}

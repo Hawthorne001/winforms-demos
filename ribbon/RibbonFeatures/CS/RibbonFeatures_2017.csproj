@@ -37,25 +37,25 @@
   <ItemGroup>
     <Reference Include="EnvDTE" />
     <Reference Include="syncfusion.grid.base">
-      <HintPath>packages\syncfusion.grid.base.26.1.35\lib\net462\syncfusion.grid.base.dll</HintPath>
+      <HintPath>packages\syncfusion.grid.base.28.2.3\lib\net462\syncfusion.grid.base.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.grid.windows">
-      <HintPath>packages\syncfusion.grid.windows.26.1.35\lib\net462\syncfusion.grid.windows.dll</HintPath>
+      <HintPath>packages\syncfusion.grid.windows.28.2.3\lib\net462\syncfusion.grid.windows.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.shared.base">
-      <HintPath>packages\syncfusion.shared.base.26.1.35\lib\net462\syncfusion.shared.base.dll</HintPath>
+      <HintPath>packages\syncfusion.shared.base.28.2.3\lib\net462\syncfusion.shared.base.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.shared.windows">
-      <HintPath>packages\syncfusion.shared.windows.26.1.35\lib\net462\syncfusion.shared.windows.dll</HintPath>
+      <HintPath>packages\syncfusion.shared.windows.28.2.3\lib\net462\syncfusion.shared.windows.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.tools.base">
-      <HintPath>packages\syncfusion.tools.base.26.1.35\lib\net462\syncfusion.tools.base.dll</HintPath>
+      <HintPath>packages\syncfusion.tools.base.28.2.3\lib\net462\syncfusion.tools.base.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.tools.windows">
-      <HintPath>packages\syncfusion.tools.windows.26.1.35\lib\net462\syncfusion.tools.windows.dll</HintPath>
+      <HintPath>packages\syncfusion.tools.windows.28.2.3\lib\net462\syncfusion.tools.windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SpellChecker.Base">
-      <HintPath>packages\Syncfusion.SpellChecker.Base.26.1.35\lib\net462\Syncfusion.SpellChecker.Base.dll</HintPath>
+      <HintPath>packages\Syncfusion.SpellChecker.Base.28.2.3\lib\net462\Syncfusion.SpellChecker.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -113,7 +113,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Reference Include="Syncfusion.Licensing">
-      <HintPath>packages\Syncfusion.Licensing.26.1.35\lib\net462\Syncfusion.Licensing.dll</HintPath>
+      <HintPath>packages\Syncfusion.Licensing.28.2.3\lib\net462\Syncfusion.Licensing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

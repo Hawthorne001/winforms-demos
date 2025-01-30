@@ -58,6 +58,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Images\LeftRightImageList\**" />
+    <EmbeddedResource Remove="Images\LeftRightImageList\**" />
+    <None Remove="Images\LeftRightImageList\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Images\StateImageList\**" />
+    <EmbeddedResource Remove="Images\StateImageList\**" />
+    <None Remove="Images\StateImageList\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

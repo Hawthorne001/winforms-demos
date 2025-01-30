@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2012
+// Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -59,7 +59,6 @@ namespace ExportImage
             this.menuExportImg = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExportSvg = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExportEmf = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuExportPdf = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,22 +142,6 @@ namespace ExportImage
             this.menuExportEmf.Size = new System.Drawing.Size(227, 32);
             this.menuExportEmf.Text = "Export As Emf...";
             this.menuExportEmf.Click += new System.EventHandler(this.menuExportEmf_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Fuchsia;
-            this.imageList1.Images.SetKeyName(0, "");
-            this.imageList1.Images.SetKeyName(1, "");
-            this.imageList1.Images.SetKeyName(2, "");
-            this.imageList1.Images.SetKeyName(3, "");
-            this.imageList1.Images.SetKeyName(4, "");
-            this.imageList1.Images.SetKeyName(5, "");
-            this.imageList1.Images.SetKeyName(6, "");
-            this.imageList1.Images.SetKeyName(7, "");
-            this.imageList1.Images.SetKeyName(8, "palette_groupbar.png");
-            this.imageList1.Images.SetKeyName(9, "property_editor.png");
-            this.imageList1.Images.SetKeyName(10, "export.png");
             // 
             // menuExportPdf
             // 
@@ -333,7 +316,7 @@ namespace ExportImage
             this.diagram1.Model = null;
             this.diagram1.Name = "diagram1";
             this.diagram1.Office2007ScrollBars = true;
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(702, 627);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 157;
@@ -348,7 +331,7 @@ namespace ExportImage
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
             this.diagram1.View.PasteOffsetX = 0;
             this.diagram1.View.PasteOffsetY = 0;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             // 
             // MainForm
@@ -394,7 +377,6 @@ namespace ExportImage
         private System.Windows.Forms.ToolStripMenuItem menuItemFileExit;
         private System.Windows.Forms.ToolStripMenuItem pdfdocument_menu;
         private Syncfusion.Windows.Forms.Diagram.Controls.PaletteGroupView paletteGroupView1;
-        private ImageList imageList1;
         private ToolStripMenuItem menuItem1;
         internal ToolStripButton ToolBarButton_PropertyEditor;
         private ToolStripButton toolBarButton1;

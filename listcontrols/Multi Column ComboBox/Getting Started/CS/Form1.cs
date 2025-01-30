@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -245,6 +245,24 @@ namespace ComboTest
             this.comboBoxAdvSampleControl1.propertyGrid1.SelectedObject = this.comboBoxAdvSampleControl1.multiColumnBoundCombo;
             adapter.Dispose();
             conn.Close();
+#else
+            table.Columns.Add("CompanyName", typeof(string));
+            table.Columns.Add("ContactName", typeof(string));
+            table.Columns.Add("City", typeof(string));
+            table.Columns.Add("Country", typeof(string));
+            table.Columns.Add("CustomerID", typeof(string));
+
+            // Add rows to the DataTable
+            table.Rows.Add("Alfreds Futterkiste", "Maria Anders", "Berlin", "Germany", "ALFKI");
+            table.Rows.Add("Ana Trujillo Emparedados y helados", "Ana Trujillo", "M�xico D.F.", "Mexico", "ANATR");
+            table.Rows.Add("Antonio Moreno Taquer�a", "Antonio Moreno", "M�xico D.F.", "Mexico", "ANTON");
+            table.Rows.Add("Around the Horn", "Thomas Hardy", "London", "UK", "AROUT");
+
+            // Bind the DataTable to the ComboBoxAdv control
+            this.comboBoxAdvSampleControl1.multiColumnBoundCombo.DataSource = table;
+            this.comboBoxAdvSampleControl1.multiColumnBoundCombo.DisplayMember = "CompanyName"; // Column to display
+            this.comboBoxAdvSampleControl1.multiColumnBoundCombo.ValueMember = "CustomerID";    // Column to use as value
+            this.comboBoxAdvSampleControl1.propertyGrid1.SelectedObject = this.comboBoxAdvSampleControl1.multiColumnBoundCombo;
 #endif
         }
 		#endregion

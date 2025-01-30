@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -10,13 +10,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace WeatherAnalysis
 {
     class RotateLabel : System.Windows.Forms.Label
     {
         int a;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int RotateAngle { get; set; }  // to rotate your text
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string NewText { get; set; }   // to draw text
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {

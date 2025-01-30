@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -465,6 +465,8 @@ namespace GridScheduleSample
 			this.EndTime = (DateTime) info.GetValue("EndTime", typeof(DateTime));
 			this.Content = (string) info.GetValue("Content", typeof(string));
 			this.AllDay = (bool) info.GetValue("AllDay", typeof(bool));
+			this.BackColor = (Color)info.GetValue("BackColor", typeof(Color));
+			this.ForeColor = (Color)info.GetValue("ForeColor", typeof(Color));
 
 			this.Dirty = false;
 		}
@@ -488,6 +490,8 @@ namespace GridScheduleSample
 			info.AddValue("EndTime", this.EndTime);  
 			info.AddValue("Content", this.Content);  
 			info.AddValue("AllDay", this.AllDay);  
+			info.AddValue("BackColor", this.BackColor);
+			info.AddValue("ForeColor", this.ForeColor);
 			
 			//info.AddValue("Tag", this.Tag); assume Tag not serializable in this implemetation
 		}

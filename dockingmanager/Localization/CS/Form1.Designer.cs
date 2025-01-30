@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -7,6 +7,7 @@
 #endregion
 
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Localization
 {
@@ -29,6 +30,26 @@ namespace Localization
             }
             base.Dispose(disposing);
         }
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        public static void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"Localization.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
 
         #region Windows Form Designer generated code
 
@@ -543,7 +564,11 @@ namespace Localization
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 40);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "1.png");
             this.imageList1.Images.SetKeyName(1, "2.png");
@@ -969,7 +994,11 @@ namespace Localization
             // 
             // dockingImageList
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.dockingImageList, "DockingImageList", 80);
+#else
             this.dockingImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("dockingImageList.ImageStream")));
+#endif
             this.dockingImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.dockingImageList.Images.SetKeyName(0, "");
             this.dockingImageList.Images.SetKeyName(1, "");
@@ -1054,7 +1083,11 @@ namespace Localization
             // 
             // imageList2
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList2, "ImageList2", 21);
+#else
             this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+#endif
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList2.Images.SetKeyName(0, "1.png");
             this.imageList2.Images.SetKeyName(1, "2.png");
@@ -1080,7 +1113,11 @@ namespace Localization
             // 
             // imageList3
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList3, "ImageList3", 116);
+#else
             this.imageList3.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList3.ImageStream")));
+#endif
             this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList3.Images.SetKeyName(0, "Window-New.png");
             this.imageList3.Images.SetKeyName(1, "");
@@ -1201,7 +1238,11 @@ namespace Localization
             // 
             // imageList4
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList4, "ImageList4", 40);
+#else
             this.imageList4.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList4.ImageStream")));
+#endif
             this.imageList4.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList4.Images.SetKeyName(0, "");
             this.imageList4.Images.SetKeyName(1, "13.png");

@@ -238,7 +238,11 @@ namespace VisualStudioDemo
             // 
             // dockingImageList
             // 
+#if NET9_0_OR_GREATER
+            Form1.LoadImages(this.dockingImageList, "SolutionExplorerView_DockingImageList", 80);
+#else
             this.dockingImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("dockingImageList.ImageStream")));
+#endif
             this.dockingImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.dockingImageList.Images.SetKeyName(0, "");
             this.dockingImageList.Images.SetKeyName(1, "");

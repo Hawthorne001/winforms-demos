@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -821,7 +821,7 @@ namespace Syncfusion.Licensing
 		private void AfterDropDownPopup(object sender, EventArgs e)
 		{
 			// Uncomment this line, if you want the tree to take focus on dropdown.
-			 this.treeView1.Focus();
+			//this.treeView1.Focus();
 		}
 		#endregion
 		#region DropDown

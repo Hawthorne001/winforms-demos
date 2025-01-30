@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2011
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2011. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -99,13 +99,13 @@ namespace ControlsGalore
             // 
             // openDiagramDialog
             // 
-            this.openDiagramDialog.Filter = "Diagram Files|*.edd|All files|*.*";
+            this.openDiagramDialog.Filter = "XML Files|*.xml|All files|*.*";
             this.openDiagramDialog.Title = "Open Diagram";
             // 
             // saveDiagramDialog
             // 
             this.saveDiagramDialog.FileName = "doc1";
-            this.saveDiagramDialog.Filter = "Diagram files|*.edd|All files|*.*";
+            this.saveDiagramDialog.Filter = "XML files|*.xml|All files|*.*";
             this.saveDiagramDialog.Title = "SaveDiagram";
             // 
             // panel3
@@ -190,7 +190,7 @@ namespace ControlsGalore
             this.diagram1.MetroScrollBars = true;
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.Size = new System.Drawing.Size(599, 474);
             this.diagram1.SmartSizeBox = false;
             this.diagram1.TabIndex = 0;
@@ -203,7 +203,7 @@ namespace ControlsGalore
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
             this.diagram1.View.Grid.Visible = false;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             // 
             // model1
             // 
@@ -291,9 +291,9 @@ namespace ControlsGalore
         {
             SymbolPalette palette = new SymbolPalette();
 #if !NETCORE
-            palette = palette.FromFile(@"..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            palette = palette.FromFile(@"..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #else
-            palette = palette.FromFile(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            palette = palette.FromFile(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #endif
             Node start = palette.Nodes["On-page reference"];
             start.PinPoint = new PointF(70, 100);

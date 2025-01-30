@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2013
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2013. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -51,9 +51,9 @@ namespace DragDrop
 
             // Load Palette
 #if !NETCORE
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\DragDrop.edp");  
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\DragDrop.xml");  
 #else
-            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\DragDrop.edp");
+            this.paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\DragDrop.xml");
 #endif
 
         }

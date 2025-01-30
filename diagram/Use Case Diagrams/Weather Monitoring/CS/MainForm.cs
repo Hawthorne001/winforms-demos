@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -169,6 +169,9 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples
                     if (!string.IsNullOrEmpty(str))
                     {
                         XmlDocument doc = new XmlDocument();
+#if SyncfusionFramework4_0
+                        doc.XmlResolver = null;
+#endif
                         doc.LoadXml(str);
                         node.Temperature = XmlConvert.ToDecimal(doc.SelectSingleNode("dwml/data/parameters/temperature[@type='maximum']/value/text()").Value);
                         XmlNode n = doc.SelectSingleNode("dwml/data/parameters/weather/weather-conditions/value");

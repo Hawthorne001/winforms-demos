@@ -130,7 +130,7 @@
     <value>Annuler</value>
   </data>
   <data name="Choosefieldstoaddreport" xml:space="preserve">
-    <value>Choisir les champs à ajouter au rapport</value>
+    <value>Choisissez des champs à ajouter au rapport</value>
   </data>
   <data name="ClearFilter" xml:space="preserve">
     <value>Effacer le filtre</value>
@@ -154,7 +154,7 @@
     <value>Différer la mise à jour de la mise en page</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>La description</value>
+    <value>Description</value>
   </data>
   <data name="DifferenceFrom" xml:space="preserve">
     <value>Différence de</value>
@@ -187,13 +187,13 @@
     <value>Faites glisser les champs entre les zones ci-dessous</value>
   </data>
   <data name="DropPivotFieldsheretoFilterBy" xml:space="preserve">
-    <value>Déposer les champs de pivot ici pour filtrer par</value>
+    <value>Déposez les champs de tableau croisé ici pour filtrer par</value>
   </data>
   <data name="FieldHeader" xml:space="preserve">
     <value>En-tête de champ</value>
   </data>
   <data name="FieldName" xml:space="preserve">
-    <value>Nom de domaine</value>
+    <value>Nom du champ</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Format</value>
@@ -202,13 +202,13 @@
     <value>Formule</value>
   </data>
   <data name="GrandTotal" xml:space="preserve">
-    <value>Grandiose</value>
+    <value>Grand</value>
   </data>
   <data name="Index" xml:space="preserve">
-    <value>Indice</value>
+    <value>Index</value>
   </data>
   <data name="IntTotalSum" xml:space="preserve">
-    <value>Int Total Sum</value>
+    <value>Somme totale d'entiers</value>
   </data>
   <data name="Max" xml:space="preserve">
     <value>Max</value>
@@ -217,22 +217,22 @@
     <value>Min</value>
   </data>
   <data name="MoveDown" xml:space="preserve">
-    <value>Descendre</value>
+    <value>Déplacer vers le bas</value>
   </data>
   <data name="MoveToBeginning" xml:space="preserve">
-    <value>Aller au début</value>
+    <value>Déplacer au début</value>
   </data>
   <data name="MoveToColumnLabels" xml:space="preserve">
     <value>Déplacer vers les étiquettes de colonne</value>
   </data>
   <data name="MoveToEnd" xml:space="preserve">
-    <value>Déplacer pour terminer</value>
+    <value>Déplacer vers la fin</value>
   </data>
   <data name="MoveToReportFilter" xml:space="preserve">
     <value>Déplacer vers le filtre de rapport</value>
   </data>
   <data name="MoveToRowLabels" xml:space="preserve">
-    <value>Déplacer vers les étiquettes de lignes</value>
+    <value>Déplacer vers les étiquettes de ligne</value>
   </data>
   <data name="MoveToValues" xml:space="preserve">
     <value>Déplacer aux valeurs</value>
@@ -244,7 +244,7 @@
     <value>Pas de calcul</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>D'accord</value>
+    <value>OK</value>
   </data>
   <data name="PercentageOf" xml:space="preserve">
     <value>% De</value>
@@ -259,13 +259,13 @@
     <value>% du total général</value>
   </data>
   <data name="PercentageOfParentColumnTotal" xml:space="preserve">
-    <value>% du total de la colonne parent</value>
+    <value>% du total de la colonne parente</value>
   </data>
   <data name="PercentageOfParentRowTotal" xml:space="preserve">
-    <value>% du total de la ligne parent</value>
+    <value>% du total de la ligne parente</value>
   </data>
   <data name="PercentageOfParentTotal" xml:space="preserve">
-    <value>% du parent total</value>
+    <value>% du total parent</value>
   </data>
   <data name="PercentageOfRowTotal" xml:space="preserve">
     <value>% du total de la ligne</value>
@@ -280,34 +280,34 @@
     <value>Concepteur de schéma de pivot</value>
   </data>
   <data name="PivotTableFieldList" xml:space="preserve">
-    <value>Tableau de tableau croisé dynamique</value>
+    <value>Liste des champs du tableau croisé</value>
   </data>
   <data name="PivotValueChooser" xml:space="preserve">
     <value>Sélecteur de valeur de pivot</value>
   </data>
   <data name="RankLargestToSmallest" xml:space="preserve">
-    <value>Rang le plus grand au plus petit</value>
+    <value>Classer du plus grand au plus petit</value>
   </data>
   <data name="RankSmallestToLargest" xml:space="preserve">
-    <value>Rang du plus petit au plus grand</value>
+    <value>Classer du plus petit au plus grand</value>
   </data>
   <data name="RemoveField" xml:space="preserve">
     <value>Supprimer le champ</value>
   </data>
   <data name="ReportFilter" xml:space="preserve">
-    <value>Les filtres</value>
+    <value>Filtres</value>
   </data>
   <data name="RowLabel" xml:space="preserve">
     <value>Lignes</value>
   </data>
   <data name="RunningTotalIn" xml:space="preserve">
-    <value>Running Total In</value>
+    <value>Total cumulatif dans</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Tout sélectionner</value>
+    <value>Sélectionner tout</value>
   </data>
   <data name="ShowCalculationsasColumns" xml:space="preserve">
-    <value>Afficher les calculs sous forme de colonnes</value>
+    <value>Afficher les calculs en colonnes</value>
   </data>
   <data name="ShowValueAs" xml:space="preserve">
     <value>Afficher la valeur en tant que</value>
@@ -319,7 +319,7 @@
     <value>Trier du plus petit au plus grand</value>
   </data>
   <data name="StdDev" xml:space="preserve">
-    <value>StdDev</value>
+    <value>Écart-type</value>
   </data>
   <data name="StdDevP" xml:space="preserve">
     <value>StdDevP</value>
@@ -331,10 +331,10 @@
     <value>Résumer la valeur par</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>Totale</value>
+    <value>Total</value>
   </data>
   <data name="Update" xml:space="preserve">
-    <value>Mise à jour</value>
+    <value>Mettre à jour</value>
   </data>
   <data name="Values" xml:space="preserve">
     <value>Valeurs</value>

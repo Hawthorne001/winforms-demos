@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2015
+// Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -36,23 +36,23 @@ namespace DynamicFilter
                     case DynamicFilterResourceIdentifiers.EndsWith:
                         return "termina con";
                     case DynamicFilterResourceIdentifiers.Equal:
-                        return "es igual a";
+                        return "Igual";
                     case DynamicFilterResourceIdentifiers.GreaterThan:
                         return "mayor que";
                     case DynamicFilterResourceIdentifiers.GreaterThanOrEqualTo:
-                        return "Mayor o igual a";
+                        return "MayorOIgualQue";
                     case DynamicFilterResourceIdentifiers.LessThan:
-                        return "menos que";
+                        return "MenorQue";
                     case DynamicFilterResourceIdentifiers.LessThanOrEqualTo:
-                        return "Menor o igual a";
+                        return "MenorOIgualQue";
                     case DynamicFilterResourceIdentifiers.Like:
                         return "como";
                     case DynamicFilterResourceIdentifiers.Match:
-                        return "partido";
+                        return "Coincidir";
                     case DynamicFilterResourceIdentifiers.NotEquals:
-                        return "no es igual";
+                        return "NoIgual";
                     case DynamicFilterResourceIdentifiers.ExpressionMATCH:
-                        return "expresión de coincidencia";
+                        return "ExpresiónCOINCIDIR";
                     #endregion
 
                     default:

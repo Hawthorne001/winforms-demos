@@ -34,7 +34,7 @@ namespace TabSplitterContainer_2005
             this.Text = title;
             this.richTextBox1.LoadFile(basePath + filename);
         }
-
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Image DesignWindow
         {
             get

@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2017
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2017. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -253,7 +253,7 @@ namespace EssentialPDFSamples
                     WordDocument doc = new WordDocument(textBox1.Tag.ToString());
                     //Export the document to HTML and save as .html file
                     HTMLExport htmlExport = new HTMLExport();
-                    htmlExport.SaveAsXhtml(doc, "DocToHtml.html");
+                    htmlExport.SaveAsXhtml(doc, "WordToHTML.html");
 
                     //Message box confirmation to view the created document.
                     if (MessageBoxAdv.Show("Do you want to view the HTML file?", "File has been created", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -262,10 +262,10 @@ namespace EssentialPDFSamples
                         {                      
 #if NETCORE
                             System.Diagnostics.Process process = new System.Diagnostics.Process();
-                            process.StartInfo = new System.Diagnostics.ProcessStartInfo("DocToHtml.html") { UseShellExecute = true };
+                            process.StartInfo = new System.Diagnostics.ProcessStartInfo("WordToHTML.html") { UseShellExecute = true };
                             process.Start();
 #else                       
-                            System.Diagnostics.Process.Start("DocToHtml.html");
+                            System.Diagnostics.Process.Start("WordToHTML.html");
 #endif
                             //Exit
                             this.Close();
@@ -291,8 +291,8 @@ namespace EssentialPDFSamples
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.textBox1.Text = "DocToHTML.doc";
-            this.textBox1.Tag = Application.StartupPath + @"..\..\..\..\..\..\..\common\Data\DocIO\Doc to HTML.doc";
+            this.textBox1.Text = "WordToHTML.docx";
+            this.textBox1.Tag = Application.StartupPath + @"..\..\..\..\..\..\..\common\Data\DocIO\WordToHTML.docx";
         }
         #endregion
 

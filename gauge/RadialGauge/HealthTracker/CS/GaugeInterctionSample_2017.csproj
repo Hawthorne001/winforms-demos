@@ -41,10 +41,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Syncfusion.Gauge.Windows">
-      <HintPath>packages\Syncfusion.Gauge.Windows.26.1.35\lib\net462\Syncfusion.Gauge.Windows.dll</HintPath>
+      <HintPath>packages\Syncfusion.Gauge.Windows.28.2.3\lib\net462\Syncfusion.Gauge.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base">
-      <HintPath>packages\Syncfusion.Shared.Base.26.1.35\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
+      <HintPath>packages\Syncfusion.Shared.Base.28.2.3\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -106,7 +106,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Reference Include="Syncfusion.Licensing">
-      <HintPath>packages\Syncfusion.Licensing.26.1.35\lib\net462\Syncfusion.Licensing.dll</HintPath>
+      <HintPath>packages\Syncfusion.Licensing.28.2.3\lib\net462\Syncfusion.Licensing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

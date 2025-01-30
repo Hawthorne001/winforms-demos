@@ -6,7 +6,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>FishboneDiagram</AssemblyName>
     <RootNamespace>FishboneDiagram</RootNamespace>
-    <DefineConstants>NETCORE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET80</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFrameworkVersion>
     </TargetFrameworkVersion>

@@ -58,6 +58,7 @@ namespace HeaderFooter
         /// <summary>
         /// Gets or sets the textbox control value.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal TextBox TextBox { get; set; }
 
         /// <summary>

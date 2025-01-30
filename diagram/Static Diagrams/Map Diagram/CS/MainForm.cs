@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2012
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2012. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -62,9 +62,9 @@ namespace Map
 
             //Loading the diagram file
 #if !NETCORE
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\common\Data\Diagram\edd\HighLightDiagram.edd");
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\common\Data\Diagram\xml\HighLightDiagram.xml");
 #else
-            this.diagram1.LoadBinary(@"..\..\..\..\..\..\..\common\Data\Diagram\edd\HighLightDiagram.edd");
+            this.diagram1.LoadXml(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\HighLightDiagram.xml");
 #endif
 
             foreach (Node n in this.diagram1.Model.Nodes)

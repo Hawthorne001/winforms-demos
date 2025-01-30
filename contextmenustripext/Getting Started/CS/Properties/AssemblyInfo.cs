@@ -1,7 +1,7 @@
 #region Copyright Syncfusion Inc. 2001-2018.
 //-------------------------------------------------------------------------------------------------
 // <copyright file="AssemblyInfo.cs" company="syncfusion">
-//  Copyright (c) Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright (c) Syncfusion Inc. 2001 - 2019. All rights reserved.
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
 //  licensing@syncfusion.com. Re-distribution in any form is strictly
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Syncfusion Inc.")]
 [assembly: AssemblyProduct("GettingStarted_2015")]
-[assembly: AssemblyCopyright("Copyright © 2001-2024 Syncfusion Inc.")]
+[assembly: AssemblyCopyright("Copyright © 2001-2025 Syncfusion® Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

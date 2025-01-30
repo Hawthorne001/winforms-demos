@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2007
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2007. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -447,66 +447,30 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             // 
             // openPaletteDialog
             // 
-            this.openPaletteDialog.DefaultExt = "edp";
-            this.openPaletteDialog.Filter = "Essential Diagram Palettes|*.edp|Visio Stencils|*.vss; *.vsx|Visio Drawings(Shape" +
-                "s only)|*.vsd; *.vdx|All files|*.*";
+            this.openPaletteDialog.DefaultExt = "xml";
+            this.openPaletteDialog.Filter = "XML Files|*.xml|Essential Diagram Palettes|*.edp|Visio Stencils|*.vss;*.vsx|Visio Drawings (Shapes only)|*.vsd;*.vdx|All files|*.*";
             this.openPaletteDialog.Title = "Add SymbolPalette";
             // 
             // savePaletteDialog
             // 
-            this.savePaletteDialog.DefaultExt = "edp";
-            this.savePaletteDialog.Filter = "Essential Diagram Palettes|*.edp|All files|*.*";
+            this.savePaletteDialog.DefaultExt = "xml";
+            this.savePaletteDialog.Filter = "XML Files|*.xml|Essential Diagram Palettes|*.edp|All files|*.*";
             this.savePaletteDialog.Title = "Save SymbolPalette";
             // 
             // openDiagramDialog
             // 
-            this.openDiagramDialog.Filter = "Diagram Files|*.edd|All files|*.*";
+            this.openDiagramDialog.Filter = "XML Files|*.xml|EDD Files|*.edd|All files|*.*";
             this.openDiagramDialog.Title = "Open Diagram";
             // 
             // saveDiagramDialog
             // 
             this.saveDiagramDialog.FileName = "doc1";
-            this.saveDiagramDialog.Filter = "Diagram files|*.edd|EMF file|*.emf|GIF file|*.gif|PNG file|*.png|BMP file|*.bmp|J" +
-                "PEG file|*.jpeg,*.jpg|TIFF file|*.tiff|SVG file|*.svg|All files|*.*";
+            this.saveDiagramDialog.Filter = "XML Files|*.xml|EDD Files|*.edd|EMF file|*.emf|GIF file|*.gif|PNG file|*.png|BMP file|*.bmp|JPEG file|*.jpeg;*.jpg|TIFF file|*.tiff|SVG file|*.svg|All files|*.*";
             // 
             // smallImageList
             // 
-            this.smallImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smallImageList.ImageStream")));
+            LoadImages(this.smallImageList, "smallImageList");
             this.smallImageList.TransparentColor = System.Drawing.Color.Fuchsia;
-            this.smallImageList.Images.SetKeyName(0, "");
-            this.smallImageList.Images.SetKeyName(1, "");
-            this.smallImageList.Images.SetKeyName(2, "");
-            this.smallImageList.Images.SetKeyName(3, "");
-            this.smallImageList.Images.SetKeyName(4, "");
-            this.smallImageList.Images.SetKeyName(5, "");
-            this.smallImageList.Images.SetKeyName(6, "");
-            this.smallImageList.Images.SetKeyName(7, "");
-            this.smallImageList.Images.SetKeyName(8, "");
-            this.smallImageList.Images.SetKeyName(9, "");
-            this.smallImageList.Images.SetKeyName(10, "");
-            this.smallImageList.Images.SetKeyName(11, "");
-            this.smallImageList.Images.SetKeyName(12, "");
-            this.smallImageList.Images.SetKeyName(13, "");
-            this.smallImageList.Images.SetKeyName(14, "");
-            this.smallImageList.Images.SetKeyName(15, "");
-            this.smallImageList.Images.SetKeyName(16, "");
-            this.smallImageList.Images.SetKeyName(17, "");
-            this.smallImageList.Images.SetKeyName(18, "");
-            this.smallImageList.Images.SetKeyName(19, "");
-            this.smallImageList.Images.SetKeyName(20, "");
-            this.smallImageList.Images.SetKeyName(21, "");
-            this.smallImageList.Images.SetKeyName(22, "");
-            this.smallImageList.Images.SetKeyName(23, "");
-            this.smallImageList.Images.SetKeyName(24, "");
-            this.smallImageList.Images.SetKeyName(25, "");
-            this.smallImageList.Images.SetKeyName(26, "");
-            this.smallImageList.Images.SetKeyName(27, "");
-            this.smallImageList.Images.SetKeyName(28, "");
-            this.smallImageList.Images.SetKeyName(29, "");
-            this.smallImageList.Images.SetKeyName(30, "");
-            this.smallImageList.Images.SetKeyName(31, "");
-            this.smallImageList.Images.SetKeyName(32, "");
-            this.smallImageList.Images.SetKeyName(33, "");
             // 
             // openImageDialog
             // 
@@ -1379,7 +1343,36 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             this.ResumeLayout(false);
 
         }
-#endregion
+        #endregion
+
+        void LoadImages(ImageList imageList, String filename)
+        {
+            string folderPath = string.Empty;
+#if NETCORE
+            folderPath = Path.Combine(@"..\..\..\Resources", filename);
+#else
+            folderPath = Path.Combine(@"..\..\Resources", filename);
+#endif
+            if (!Directory.Exists(folderPath))
+            {
+                throw new DirectoryNotFoundException("Directory does not exist: " + folderPath);
+            }
+            int i = 0;
+            foreach (string imagePath in Directory.GetFiles(folderPath))
+            {
+                try
+                {
+                    using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                    {
+                        Image image = Image.FromStream(fs);
+                        imageList.Images.Add(image);
+                        imageList.Images.SetKeyName(i, "");
+                        i++;
+                    }
+                }
+                catch { }
+            }
+        }
 
         internal string FindFile( string fileName ) {
             // Check both in parent folder and Parent\Data folders.
@@ -1409,11 +1402,11 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
 
             //Load Palettes
             string[] symbolPalettes = new string[] { 
-                @"..\..\..\..\..\..\..\common\Data\Diagram\edp\FloorPlan Shapes.edp",
-                @"..\..\..\..\..\..\..\common\Data\Diagram\edp\Basic Shapes.edp",
-                @"..\..\..\..\..\..\..\common\Data\Diagram\edp\ElectricalSymbols.edp",
-                @"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp",
-                @"..\..\..\..\..\..\..\common\Data\Diagram\edp\NetworkSymbols.edp"
+                @"..\..\..\..\..\..\..\common\Data\Diagram\xml\FloorPlan Shapes.xml",
+                @"..\..\..\..\..\..\..\common\Data\Diagram\xml\Basic Shapes.xml",
+                @"..\..\..\..\..\..\..\common\Data\Diagram\xml\Circuit Shapes.xml",
+                @"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml",
+                @"..\..\..\..\..\..\..\common\Data\Diagram\xml\NetworkSymbols.xml"
                 
             };
             foreach ( string symbolpalette in symbolPalettes )
@@ -1436,12 +1429,12 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
             // Load Diagram file.
             if ( _initialFileLoc == "" )
             {
-                docForm.Diagram.LoadBinary(FindFile(@"..\..\..\..\..\..\common\Data\Diagram\edd\FloorPlan.edd"));
+                docForm.Diagram.LoadXml(FindFile(@"..\..\..\..\..\..\common\Data\Diagram\xml\FloorPlan.xml"));
                 docForm.FileName = "Floor Plan";
             }
             else
             {
-                docForm.Diagram.LoadBinary( _initialFileLoc );
+                docForm.Diagram.LoadXml( _initialFileLoc );
                 string fileName = _initialFileLoc.Substring( 0, _initialFileLoc.IndexOf( "." ) );
                 docForm.FileName = fileName;
             }
@@ -1555,12 +1548,7 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
 
                 if ( symbolPalette != null )
                 {
-                    FileStream fStream = new FileStream( strSavePath, FileMode.OpenOrCreate, FileAccess.Write );
-#pragma warning disable SYSLIB0011
-                    BinaryFormatter formatter = new BinaryFormatter( );
-                    formatter.Serialize( fStream, symbolPalette );
-#pragma warning restore SYSLIB0011
-                    fStream.Close( );
+                    symbolPalette.SavePalette( strSavePath );
                 }
             }
         }
@@ -1577,16 +1565,17 @@ namespace Syncfusion.Windows.Forms.Diagram.Samples.DiagramTool
 
                 if ( match.Success )
                 {
+#if !NETCORE
                     VisioStencilConverter converter = new VisioStencilConverter( strFileName, this );
                     converter.ShowProgressDialog = true;
                     curSymbolPalette = converter.Convert( );
                     if ( curSymbolPalette != null )
                         symbolPaletteGroupBar.AddPalette( curSymbolPalette );
+#endif
                 }
                 else
                 {
-                    curSymbolPalette = curSymbolPalette.FromFile(strFileName);
-                    symbolPaletteGroupBar.AddPalette(curSymbolPalette);
+                    symbolPaletteGroupBar.LoadPalette(strFileName);
                 }
             }
         }

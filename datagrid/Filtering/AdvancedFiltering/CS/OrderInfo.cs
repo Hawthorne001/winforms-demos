@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -17,9 +17,9 @@ namespace AdvancedFiltering
 {
     public partial class OrderInfo : INotifyPropertyChanged
     {
-        private int _OrderID;
+        private int? _OrderID;
 
-        private DateTime _orderDate;
+        private DateTime? _orderDate;
 
         private string _CustomerID;
 
@@ -46,7 +46,7 @@ namespace AdvancedFiltering
         /// </summary>
         /// <value>The order ID.</value>
         [Display(Name = "Order ID")]
-        public int OrderID
+        public int? OrderID
         {
             get
             {
@@ -99,7 +99,7 @@ namespace AdvancedFiltering
         /// Gets or Sets the OrderDate
         /// </summary>
         [Display(Name = "Order Date")]
-        public DateTime OrderDate
+        public DateTime? OrderDate
         {
             get
             {
@@ -232,11 +232,13 @@ namespace AdvancedFiltering
         /// <returns></returns>
         private OrderInfo GetOrder(int i)
         {
+            DateTime? dateValue = null;
+            int? orderID = null;
             var shipcountry = ShipCountry[r.Next(5)];
             var shipcitycoll = ShipCity[shipcountry];
             var order = new OrderInfo();
-            order.OrderID = i;
-            order.OrderDate = new DateTime(r.Next(2011, 2013), r.Next(1, 12), r.Next(1, 28));
+            order.OrderID = (i == 10029 || i == 10053) ? orderID : i;
+            order.OrderDate = (i == 10040 || i == 10065) ? dateValue : new DateTime(r.Next(2011, 2013), r.Next(1, 12), r.Next(1, 28));
             order.ProductName = productName[r.Next(5)];
             order.CustomerID = GetCustomerID(i);
             order.UnitPrice = unitPrice[r.Next(35)];
@@ -248,7 +250,9 @@ namespace AdvancedFiltering
 
         string GetCustomerID(int i)
         {
-            if (i % 4 != 0 || i == 0)
+            if (i == 10028 || i == 10046)
+                return null;
+            else if (i % 4 != 0 || i == 0)
             {
                 return CustomerID[customerIdCount];
             }

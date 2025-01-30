@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -993,7 +993,8 @@ namespace StatePersistence
             this.parentBarItem6.Items.AddRange(new Syncfusion.Windows.Forms.Tools.XPMenus.BarItem[] {
             this.barItem16,
             this.barItem17,
-            this.barItem18});
+            this.barItem18
+            });
             this.parentBarItem6.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(201)))), ((int)(((byte)(232)))));
             this.parentBarItem6.ShowToolTipInPopUp = false;
             this.parentBarItem6.SizeToFit = true;
@@ -1007,6 +1008,9 @@ namespace StatePersistence
             this.barItem16.ID = "Save As IsolatedStorage";
             this.barItem16.ShowToolTipInPopUp = false;
             this.barItem16.SizeToFit = true;
+#if NET9_0_OR_GREATER
+            this.barItem16.Enabled = false;
+#endif
             this.barItem16.Text = "Save As IsolatedStorage";
             // 
             // barItem17
@@ -1016,6 +1020,9 @@ namespace StatePersistence
             this.barItem17.ID = "Save As Binary Format";
             this.barItem17.ShowToolTipInPopUp = false;
             this.barItem17.SizeToFit = true;
+#if NET9_0_OR_GREATER
+            this.barItem17.Enabled = false;
+#endif
             this.barItem17.Text = "Save As Binary Format";
             // 
             // barItem18
@@ -1049,6 +1056,9 @@ namespace StatePersistence
             this.barItem19.ID = "Load from IsolatedStorage";
             this.barItem19.ShowToolTipInPopUp = false;
             this.barItem19.SizeToFit = true;
+#if NET9_0_OR_GREATER
+            this.barItem19.Enabled = false;
+#endif
             this.barItem19.Text = "Load from IsolatedStorage";
             // 
             // barItem20
@@ -1058,6 +1068,9 @@ namespace StatePersistence
             this.barItem20.ID = "Load from Binary Format";
             this.barItem20.ShowToolTipInPopUp = false;
             this.barItem20.SizeToFit = true;
+#if NET9_0_OR_GREATER
+            this.barItem20.Enabled = false;
+#endif
             this.barItem20.Text = "Load from Binary Format";
             // 
             // barItem21

@@ -37,6 +37,7 @@ namespace EditorControls
             style.Add("Office2016Black");
             this.sfComboBox1.DataSource = style;
             this.sfComboBox1.SelectedIndex = 0;
+            this.sfComboBox1.AllowDropDownResize = false;
 
             bannerTextProvider1 = new BannerTextProvider();
 

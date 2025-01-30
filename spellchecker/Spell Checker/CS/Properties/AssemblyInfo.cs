@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Syncfusion Inc.")]
 [assembly: AssemblyProduct("SpellCheckerDemo_2008")]
-[assembly: AssemblyCopyright("Copyright © 2001-2024 Syncfusion Inc.")]
+[assembly: AssemblyCopyright("Copyright © 2001-2025 Syncfusion® Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

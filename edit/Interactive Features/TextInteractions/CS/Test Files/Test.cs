@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2013
 //
-//  Copyright fhgfghfghSyncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright fhgfghfghSyncfusion Inc. 2001 - 2013. All rights reserved.
 //
 //  Use of fghfghthis code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any timfghfge by e-mailing

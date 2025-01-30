@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
-// Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+#region Copyright Syncfusion Inc. 2001 - 2019
+// Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -45,7 +45,11 @@ namespace RadialMenuDemo
             this.radialMenu1.MinimumSize = this.radialMenu1.Size;
             this.richTextBox1.MouseDown += richTextBox1_MouseDown;
             this.richTextBox1.GotFocus += richTextBox1_GotFocus;
+#if NETCORE
+            this.Icon = new Icon("../../../Icon/Icon.ico");
+#else
             this.Icon = new Icon("../../Icon/Icon.ico");
+#endif
             UpdateRadialMenuForOffice2016Theme();
             UpdateTheme();
             UpdateItemStyle();

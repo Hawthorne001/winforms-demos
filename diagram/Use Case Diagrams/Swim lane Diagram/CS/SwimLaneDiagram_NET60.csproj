@@ -6,7 +6,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>SwimLaneDiagram</AssemblyName>
     <RootNamespace>SwimLaneDiagram</RootNamespace>
-    <DefineConstants>NETCORE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NET60</DefineConstants>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFrameworkVersion>
     </TargetFrameworkVersion>

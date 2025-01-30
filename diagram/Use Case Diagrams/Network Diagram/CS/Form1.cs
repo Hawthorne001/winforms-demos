@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -38,9 +38,9 @@ namespace Network_Diagram
             InitializeComponent();
             this.diagram1.BeginUpdate();
 #if !NETCORE
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\edp\NetworkSymbols.edp");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\common\Data\Diagram\xml\NetworkSymbols.xml");
 #else
-            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\NetworkSymbols.edp");
+            paletteGroupBar1.LoadPalette(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\NetworkSymbols.xml");
 #endif
             this.diagram1.Model.BoundaryConstraintsEnabled = false;
             this.diagram1.Model.RenderingStyle.SmoothingMode = SmoothingMode.HighQuality;
@@ -458,11 +458,11 @@ namespace Network_Diagram
             }
             this.diagram1.Model.EndUpdate();
         }
-#endregion
+        #endregion
 
-#region Properties
+        #region Properties
 
-        public bool SaveChanges
+         bool SaveChanges
         {
             get
             {
@@ -618,7 +618,7 @@ namespace Network_Diagram
                 if (res == DialogResult.Yes)
                 {
                     this.saveFileDialog1.FileName = "Diagram";
-                    saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+                    saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
                     saveFileDialog1.Title = "Save File As:";
 
                     if (this.HasFileName)
@@ -658,12 +658,17 @@ namespace Network_Diagram
             switch (index)
             {
                 case 1:
-                    diagram1.SaveBinary(filename);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                    diagram1.SaveXml(filename);
+                    this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(filename);
+#endif
                     break;
                 case 2:
-#if !NETCORE
-                    diagram1.SaveSoap(filename);
-#endif
+                    diagram1.SaveBinary(filename);
+
                     break;
                 default:
                     diagram1.SaveBinary(filename);

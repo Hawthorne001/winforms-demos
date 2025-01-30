@@ -50,6 +50,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Images\LeftImageList\**" />
+    <EmbeddedResource Remove="Images\LeftImageList\**" />
+    <None Remove="Images\LeftImageList\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Images\RightImageList\**" />
+    <EmbeddedResource Remove="Images\RightImageList\**" />
+    <None Remove="Images\RightImageList\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Images\StateImageList\**" />
+    <EmbeddedResource Remove="Images\StateImageList\**" />
+    <None Remove="Images\StateImageList\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

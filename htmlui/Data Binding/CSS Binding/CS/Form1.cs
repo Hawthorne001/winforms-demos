@@ -370,22 +370,25 @@ namespace Syncfusion.Windows.Forms.HTMLUI.Samples
 
 		private void MovePosition(bool forward)
 		{
-			int currentPos = manager.Position;
-			int count = manager.Count;
-		
-			if(forward)
-				currentPos  += 1;
-			else
-				currentPos = Math.Max(0, currentPos-1);
+            if (manager != null)
+            {
+                int currentPos = manager.Position;
+                int count = manager.Count;
 
-			if (currentPos < count)
-			{
-				manager.Position  = currentPos;
-			}
-			else
-			{	
-				return;
-			}
+                if (forward)
+                    currentPos += 1;
+                else
+                    currentPos = Math.Max(0, currentPos - 1);
+
+                if (currentPos < count)
+                {
+                    manager.Position = currentPos;
+                }
+                else
+                {
+                    return;
+                }
+            }
 		}
 
 		private void manager_PositionChanged(object sender, EventArgs e)

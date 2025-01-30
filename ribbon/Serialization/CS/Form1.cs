@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -313,6 +313,9 @@ namespace WF_Word
             if (System.IO.File.Exists(PATH))
             {
                 XmlDocument xmldoc = new XmlDocument();
+#if NET40
+                xmldoc.XmlResolver = null;
+#endif
                 xmldoc.Load(PATH);
                 XmlNode root = xmldoc.DocumentElement;
 
@@ -376,6 +379,9 @@ namespace WF_Word
             else //If there is already a file
             {
                 //Load the XML File
+#if NET40
+                doc.XmlResolver = null;
+#endif
                 doc.Load(PATH);
 
                 //Get the root element

@@ -58,9 +58,9 @@ namespace Themes
             binding1.DefaultNode = null;
             binding1.Diagram = this.diagram1;
             binding1.Id = null;
-#if !NETCORE
-            binding1.Label = ((System.Collections.Generic.List<string>)(resources.GetObject("binding1.Label")));
-#endif
+
+            binding1.Label = new System.Collections.Generic.List<string>();
+
             binding1.ParentId = null;
             this.diagram1.Binding = binding1;
             this.diagram1.Controller.Constraint = Syncfusion.Windows.Forms.Diagram.Constraints.PageEditable;
@@ -71,7 +71,7 @@ namespace Themes
             this.diagram1.Location = new System.Drawing.Point((int)DpiAware.LogicalToDeviceUnits(19), (int)DpiAware.LogicalToDeviceUnits(19));
             this.diagram1.Model = this.model1;
             this.diagram1.Name = "diagram1";
-            this.diagram1.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("diagram1.ScrollVirtualBounds")));
+            this.diagram1.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.ShowRulers = true;
             this.diagram1.Size = new System.Drawing.Size((int)DpiAware.LogicalToDeviceUnits(733), (int)DpiAware.LogicalToDeviceUnits(511));
             this.diagram1.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -84,7 +84,7 @@ namespace Themes
             this.diagram1.View.ClientRectangle = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.diagram1.View.Controller = this.diagram1.Controller;
             this.diagram1.View.Grid.MinPixelSpacing = 4F;
-            this.diagram1.View.ScrollVirtualBounds = ((System.Drawing.RectangleF)(resources.GetObject("resource.ScrollVirtualBounds")));
+            this.diagram1.View.ScrollVirtualBounds = new System.Drawing.RectangleF(0, 0, 0, 0);
             this.diagram1.View.ZoomType = Syncfusion.Windows.Forms.Diagram.ZoomType.Center;
             // 
             // model1

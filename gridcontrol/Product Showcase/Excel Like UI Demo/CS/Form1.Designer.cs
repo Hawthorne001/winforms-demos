@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -7,6 +7,7 @@
 #endregion
 using System.Drawing;
 using System;
+using System.Windows.Forms;
 namespace ExcelLikeUI
 {
     partial class Form1
@@ -3793,7 +3794,11 @@ namespace ExcelLikeUI
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            LoadImages(this.imageList1, "ImageList1", 3);
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "saveHS.png");
             this.imageList1.Images.SetKeyName(1, "Edit_UndoHS.png");
@@ -3902,7 +3907,7 @@ namespace ExcelLikeUI
         }
 
         #endregion
-
+       
         internal Syncfusion.Windows.Forms.BackStageView backStageView1;
         internal Syncfusion.Windows.Forms.BackStage backStage1;
         internal Syncfusion.Windows.Forms.BackStageButton saveBackStageButton;

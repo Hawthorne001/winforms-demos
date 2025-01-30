@@ -44,9 +44,9 @@ namespace Themes
         {
             SymbolPalette palette = new SymbolPalette();
 #if !NETCORE
-            palette = palette.FromFile(@"..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            palette = palette.FromFile(@"..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #else
-            palette = palette.FromFile(@"..\..\..\..\..\..\..\common\Data\Diagram\edp\Flowchart Symbols.edp");
+            palette = palette.FromFile(@"..\..\..\..\..\..\..\common\Data\Diagram\xml\Flowchart Symbols.xml");
 #endif
             Node start = palette.Nodes["On-page reference"];
             start.PinPoint = new PointF(70, 100);

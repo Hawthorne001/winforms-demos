@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2015
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -21,7 +21,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Syncfusion Inc.")]
 [assembly: AssemblyProduct("Essential Grid")]
-[assembly: AssemblyCopyright("Copyright © 2001-2024 Syncfusion Inc.")]
+[assembly: AssemblyCopyright("Copyright © 2001-2025 Syncfusion® Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 

@@ -55,19 +55,19 @@
   <ItemGroup>
     <Reference Include="DemoCommon">
       <Name>DemoCommon</Name>
-      <HintPath>packages\Syncfusion.DemoCommon.26.1.35\lib\net462\DemoCommon.dll</HintPath>
+      <HintPath>packages\Syncfusion.DemoCommon.28.2.3\lib\net462\DemoCommon.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Diagram.Base">
-      <HintPath>packages\Syncfusion.Diagram.Base.26.1.35\lib\net462\Syncfusion.Diagram.Base.dll</HintPath>
+      <HintPath>packages\Syncfusion.Diagram.Base.28.2.3\lib\net462\Syncfusion.Diagram.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Diagram.Windows">
-      <HintPath>packages\Syncfusion.Diagram.Windows.26.1.35\lib\net462\Syncfusion.Diagram.Windows.dll</HintPath>
+      <HintPath>packages\Syncfusion.Diagram.Windows.28.2.3\lib\net462\Syncfusion.Diagram.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base">
-      <HintPath>packages\Syncfusion.Shared.Base.26.1.35\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
+      <HintPath>packages\Syncfusion.Shared.Base.28.2.3\lib\net462\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Windows">
-      <HintPath>packages\Syncfusion.Shared.Windows.26.1.35\lib\net462\Syncfusion.Shared.Windows.dll</HintPath>
+      <HintPath>packages\Syncfusion.Shared.Windows.28.2.3\lib\net462\Syncfusion.Shared.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -130,7 +130,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Reference Include="Syncfusion.Licensing">
-      <HintPath>packages\Syncfusion.Licensing.26.1.35\lib\net462\Syncfusion.Licensing.dll</HintPath>
+      <HintPath>packages\Syncfusion.Licensing.28.2.3\lib\net462\Syncfusion.Licensing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

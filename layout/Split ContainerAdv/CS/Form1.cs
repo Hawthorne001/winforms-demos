@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2019
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2019. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -71,6 +71,7 @@ namespace SplitContainerAdv
             style.Add("Office2016Black");
 
             this.sfComboBox1.DataSource = style;
+            this.sfComboBox1.AllowDropDownResize = false;
 
             List<string> collapsePanelOn = new List<string>();
 
@@ -131,6 +132,17 @@ namespace SplitContainerAdv
         }
 
         #endregion
+
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private static Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+#endif
 
         #region Windows Form Designer generated code
         /// <summary>
@@ -325,7 +337,12 @@ namespace SplitContainerAdv
             // 
             // imageList1
             // 
+#if NET9_0_OR_GREATER
+            this.imageList1.Images.Add(GetImage("SplitContainerAdv.Images.ImageList1.Image_1.png"));
+            this.imageList1.Images.Add(GetImage("SplitContainerAdv.Images.ImageList1.Image_2.png"));
+#else
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+#endif
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "");
             this.imageList1.Images.SetKeyName(1, "");
@@ -583,9 +600,6 @@ namespace SplitContainerAdv
 
                 this.sfComboBox1.ThemeName = "Office2016Colorful";
                 this.sfComboBox2.ThemeName = "Office2016Colorful";
-
-                this.sfComboBox1.BackColor = ColorTranslator.FromHtml("#ffffff");
-                this.sfComboBox2.BackColor = ColorTranslator.FromHtml("#ffffff");
 
                 this.checkBox1.ThemeName = "Office2016Colorful";
                 this.checkBoxAdv1.ThemeName = "Office2016Colorful";

@@ -162,7 +162,7 @@
     <comment>Text for Date Filter</comment>
   </data>
   <data name="FilterControl_DateSortAscending" xml:space="preserve">
-    <value>Trier le plus ancien au plus récent</value>
+    <value>Trier du plus ancien au plus récent</value>
     <comment>Text for Date Sort Ascending</comment>
   </data>
   <data name="FilterControl_DateSortDescending" xml:space="preserve">
@@ -174,7 +174,7 @@
     <comment>Text for Empty</comment>
   </data>
   <data name="FilterControl_EndsWith" xml:space="preserve">
-    <value>Se termine par</value>
+    <value>Finit par</value>
     <comment>Text  for Ends With</comment>
   </data>
   <data name="FilterControl_EnterValidFilterValue" xml:space="preserve">
@@ -182,7 +182,7 @@
     <comment>Text for Enter Valid Filter Value</comment>
   </data>
   <data name="FilterControl_Equals" xml:space="preserve">
-    <value>Équivaut à</value>
+    <value>Égale</value>
     <comment>Text for Equals</comment>
   </data>
   <data name="FilterControl_GreaterThan" xml:space="preserve">
@@ -190,7 +190,7 @@
     <comment>Text for Greater Than</comment>
   </data>
   <data name="FilterControl_GreaterThanorEqual" xml:space="preserve">
-    <value>Meilleur que ou égal</value>
+    <value>Plus grand ou égal</value>
     <comment>Text for Greater than or Equal</comment>
   </data>
   <data name="FilterControl_LessThan" xml:space="preserve">
@@ -198,15 +198,15 @@
     <comment>Text for Less than</comment>
   </data>
   <data name="FilterControl_LessThanorEqual" xml:space="preserve">
-    <value>Moins que ou égal</value>
+    <value>Moins ou égal</value>
     <comment>Text for Less than or Equal</comment>
   </data>
   <data name="FilterControl_NotEmpty" xml:space="preserve">
-    <value>Pas vide</value>
+    <value>Non vide</value>
     <comment>Text for Not empty</comment>
   </data>
   <data name="FilterControl_NotEquals" xml:space="preserve">
-    <value>Pas égal</value>
+    <value>Différent de</value>
     <comment>Text for not Equals</comment>
   </data>
   <data name="FilterControl_NotNull" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Text for Nul</comment>
   </data>
   <data name="FilterControl_NumberFilter" xml:space="preserve">
-    <value>Filtre de nombre</value>
+    <value>Filtre numérique</value>
     <comment>Text for Number Filter</comment>
   </data>
   <data name="FilterControl_NumberSortAscending" xml:space="preserve">
@@ -256,7 +256,7 @@
     <value>Ou</value>
   </data>
   <data name="GroupPanel_GroupDropAreaText" xml:space="preserve">
-    <value>faites glisser un en-tête de colonne ici pour le grouper par cette colonne</value>
+    <value>Faites glisser une colonne pour grouper</value>
     <comment>Group Drop Area Text</comment>
   </data>
   <data name="INotifyDataErrorInfo_DefaultErrorMessage" xml:space="preserve">
@@ -264,7 +264,7 @@
     <comment>Only for INotifyDataErrorInfo error for a row. Error message can be changed using the RowValidating event.</comment>
   </data>
   <data name="FilterControl_NoItems" xml:space="preserve">
-    <value>Pas d'objet</value>
+    <value>Aucun élément</value>
     <comment>Text for items not found</comment>
   </data>
   <data name="FilterControl_DoesNotContain" xml:space="preserve">
@@ -272,15 +272,15 @@
     <comment>Text for Does Not Contain</comment>
   </data>
   <data name="FilterControl_DoesNotBeginWith" xml:space="preserve">
-    <value>Ne commence par pas</value>
+    <value>Ne commence pas par</value>
     <comment>Text for does not begin with</comment>
   </data>
   <data name="FilterControl_DoesNotEndWith" xml:space="preserve">
-    <value>Ne se termine par pas</value>
+    <value>Ne finit pas par</value>
     <comment>Text for does not end with</comment>
   </data>
   <data name="FilterControl_FilterDescription" xml:space="preserve">
-    <value>Description du filtre</value>
+    <value>Sélectionner la ligne où :</value>
     <comment>Text for FilterDescription</comment>
   </data>
 </root>

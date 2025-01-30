@@ -173,6 +173,28 @@ namespace PrintingCustomization
             #endregion
         }
 
+        #region "Image Loading Methods"
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private Image GetImage(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"PrintingCustomization.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImage(imagePath));
+            }
+        }
+#endif
+        #endregion
+
         private void populateComboBoxItems()
         {
             List<string> item1 = new List<string>();

@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -35,6 +35,8 @@ namespace NavigationDrawTile
         private Label m_Location = new Label();
         RichTextBox bottomdescription = new RichTextBox();
         private String m_HeaderText = "HeaderText";
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public String HeaderText
         {
             get
@@ -47,6 +49,8 @@ namespace NavigationDrawTile
             }
         }
         private Color m_HeaderColor = Color.Black;
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color HeaderColor
         {
             get
@@ -59,6 +63,8 @@ namespace NavigationDrawTile
             }
         }
         private Image m_TileImage = new Bitmap(10, 10);
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Image TileImage
         {
             get
@@ -71,6 +77,8 @@ namespace NavigationDrawTile
             }
         }
         private String m_PostionText = "PostionText";
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public String PostionText
         {
             get
@@ -83,6 +91,8 @@ namespace NavigationDrawTile
             }
         }
         private String m_Description = "Desc";
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public String Description
         {
             get
@@ -95,6 +105,8 @@ namespace NavigationDrawTile
             }
         }
         private String m_OrganizatonText = "OrganizatonText";
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public String OrganizatonText
         {
             get
@@ -108,6 +120,8 @@ namespace NavigationDrawTile
         }
 
         private String m_LocationText = "LocationText";
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public String LocationText
         {
             get
@@ -121,6 +135,8 @@ namespace NavigationDrawTile
         }
 
         private String m_DOBText = "DOBText";
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public String DOBText
         {
             get
@@ -133,6 +149,8 @@ namespace NavigationDrawTile
             }
         }
         private Color textColor = Color.White;
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Color TextColor
         {
             get

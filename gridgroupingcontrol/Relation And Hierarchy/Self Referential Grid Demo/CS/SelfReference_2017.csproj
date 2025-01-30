@@ -89,31 +89,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DemoCommon">
-      <HintPath>packages\Syncfusion.DemoCommon.26.1.35\lib\net462\DemoCommon.dll</HintPath>
+      <HintPath>packages\Syncfusion.DemoCommon.28.2.3\lib\net462\DemoCommon.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.grid.grouping.windows">
-      <HintPath>packages\syncfusion.grid.grouping.windows.26.1.35\lib\net462\syncfusion.grid.grouping.windows.dll</HintPath>
+      <HintPath>packages\syncfusion.grid.grouping.windows.28.2.3\lib\net462\syncfusion.grid.grouping.windows.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.grid.Windows">
-      <HintPath>packages\syncfusion.grid.Windows.26.1.35\lib\net462\syncfusion.grid.Windows.dll</HintPath>
+      <HintPath>packages\syncfusion.grid.Windows.28.2.3\lib\net462\syncfusion.grid.Windows.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.grouping.Base">
-      <HintPath>packages\syncfusion.grouping.Base.26.1.35\lib\net462\syncfusion.grouping.Base.dll</HintPath>
+      <HintPath>packages\syncfusion.grouping.Base.28.2.3\lib\net462\syncfusion.grouping.Base.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.shared.base">
-      <HintPath>packages\syncfusion.shared.base.26.1.35\lib\net462\syncfusion.shared.base.dll</HintPath>
+      <HintPath>packages\syncfusion.shared.base.28.2.3\lib\net462\syncfusion.shared.base.dll</HintPath>
     </Reference>
     <Reference Include="syncfusion.shared.Windows">
-      <HintPath>packages\syncfusion.shared.Windows.26.1.35\lib\net462\syncfusion.shared.Windows.dll</HintPath>
+      <HintPath>packages\syncfusion.shared.Windows.28.2.3\lib\net462\syncfusion.shared.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.Windows">
-      <HintPath>packages\Syncfusion.Tools.Windows.26.1.35\lib\net462\Syncfusion.Tools.Windows.dll</HintPath>
+      <HintPath>packages\Syncfusion.Tools.Windows.28.2.3\lib\net462\Syncfusion.Tools.Windows.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SpellChecker.Base">
-      <HintPath>packages\Syncfusion.SpellChecker.Base.26.1.35\lib\net462\Syncfusion.SpellChecker.Base.dll</HintPath>
+      <HintPath>packages\Syncfusion.SpellChecker.Base.28.2.3\lib\net462\Syncfusion.SpellChecker.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.Base">
-      <HintPath>packages\Syncfusion.Tools.Base.26.1.35\lib\net462\Syncfusion.Tools.Base.dll</HintPath>
+      <HintPath>packages\Syncfusion.Tools.Base.28.2.3\lib\net462\Syncfusion.Tools.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -190,7 +190,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Syncfusion.Licensing">
-      <HintPath>packages\Syncfusion.Licensing.26.1.35\lib\net462\Syncfusion.Licensing.dll</HintPath>
+      <HintPath>packages\Syncfusion.Licensing.28.2.3\lib\net462\Syncfusion.Licensing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2015
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -43,7 +43,29 @@ namespace CellCustomization
             initializeGrid();
         }
         #endregion
-        
+
+        #region "Image Loading Methods"
+        //Get and Load the images
+#if NET9_0_OR_GREATER
+        private  Image GetImages(string path)
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+            if (asm != null && !string.IsNullOrEmpty(path))
+                return Image.FromStream(asm.GetManifestResourceStream(path));
+            return null;
+        }
+
+        private void LoadImages(ImageList imageList, string folder, int count)
+        {
+            for (int i = 1; i <= count; i++)
+            {
+                string imagePath = ($"CellCustomization.Images.{folder}.Image_{i}.png");
+                imageList.Images.Add(GetImages(imagePath));
+            }
+        }
+#endif
+        #endregion
+
         #region "Grid Settings"
         /// <summary>
         /// Grid Settings for better look and feel

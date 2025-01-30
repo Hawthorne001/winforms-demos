@@ -1,6 +1,6 @@
-#region Copyright Syncfusion Inc. 2001 - 2024
+#region Copyright Syncfusion Inc. 2001 - 2015
 //
-//  Copyright Syncfusion Inc. 2001 - 2024. All rights reserved.
+//  Copyright Syncfusion Inc. 2001 - 2015. All rights reserved.
 //
 //  Use of this code is subject to the terms of our license.
 //  A copy of the current license can be obtained at any time by e-mailing
@@ -51,6 +51,7 @@ namespace GridOneTimeOnlyQueryCellInfo
 		/// <summary>
 		/// Property UseGridOneTimeOnlyQueryCellInfoCache (bool)
 		/// </summary>
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public bool UseGridOneTimeOnlyQueryCellInfoCache
 		{
 			get
@@ -82,6 +83,7 @@ namespace GridOneTimeOnlyQueryCellInfo
 		{
 		}
 
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public new OneTimeOnlyQueryCellInfoGridModel Model
 		{
 			get

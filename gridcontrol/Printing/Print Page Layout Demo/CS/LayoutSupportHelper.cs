@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -24,6 +24,7 @@ namespace PrintPageLayout
         /// <summary>
         /// Gets or sets the color of teh overlaid text.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Color TextColor
         {
             get { return textColor; }
@@ -35,6 +36,7 @@ namespace PrintPageLayout
         /// <summary>
         /// Gets or sets the color of the overlaid lines.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Color LineColor
         {
             get { return lineColor; }
@@ -46,6 +48,7 @@ namespace PrintPageLayout
         /// <summary>
         /// Gets or sets the width of the overlaid lines.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int LineWidth
         {
             get { return lineWidth; }
@@ -58,6 +61,7 @@ namespace PrintPageLayout
         /// <summary>
         /// Gets or sets whether print page layout borders are displayed.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowLayoutLines
         {
             get { return showLayoutLines; }
@@ -80,6 +84,7 @@ namespace PrintPageLayout
         /// <remarks> This string is used as a format in string.Format(PageTextFormat, pageNumber)
         /// to provide the string that is overlaid on each page. The default value is "page {0}".
         /// </remarks>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string PageTextFormat
         {
             get { return pageTextFormat; }
@@ -91,6 +96,7 @@ namespace PrintPageLayout
         /// <summary>
         /// Gets or sets whether the page numbers are counted horizontally or vertically.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PageFlowDirection PageFlow
         {
             get { return pageFlow; }
@@ -102,6 +108,7 @@ namespace PrintPageLayout
         /// <summary>
         /// The list of page break column numbers.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<int> PageBreakCols
         {
             get 
@@ -118,6 +125,7 @@ namespace PrintPageLayout
         /// <summary>
         /// The list of page break row numbers.
         /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<int> PageBreakRows
         {
             get

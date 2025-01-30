@@ -12,6 +12,14 @@
     </TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="car1.jpg" />
+    <EmbeddedResource Include="car2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="car1.jpg" />
+    <EmbeddedResource Include="car2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="DemoCommon">
       <HintPath>
       </HintPath>

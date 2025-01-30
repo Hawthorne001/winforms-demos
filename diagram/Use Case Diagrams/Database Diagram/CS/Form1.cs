@@ -1,5 +1,5 @@
-#region Copyright Syncfusion Inc. 2001-2024.
-// Copyright Syncfusion Inc. 2001-2024. All rights reserved.
+#region Copyright Syncfusion® Inc. 2001-2025.
+// Copyright Syncfusion® Inc. 2001-2025. All rights reserved.
 // Use of this code is subject to the terms of our license.
 // A copy of the current license can be obtained at any time by e-mailing
 // licensing@syncfusion.com. Any infringement will be prosecuted under
@@ -239,6 +239,9 @@ namespace DatabaseDiagram
 
             // Use the XML DOM to read data from the employees XML data file
             XmlDocument xmldoc = new XmlDocument();
+#if SyncfusionFramework4_0
+            xmldoc.XmlResolver = null;
+#endif
             try
             {
                 xmldoc.Load(datasrc);
@@ -404,7 +407,8 @@ namespace DatabaseDiagram
 
         #region Properties
 
-        public bool SaveChanges
+       
+         bool SaveChanges
         {
             get
             {
@@ -484,17 +488,35 @@ namespace DatabaseDiagram
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
             this.saveFileDialog1.FileName = "Diagram";
-            saveFileDialog1.Filter = "EDD file(*.edd)|*.edd";
+            saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                diagram1.SaveBinary(saveFileDialog1.FileName);
+                switch (saveFileDialog1.FilterIndex)
+                {
+                    case 1:
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                        diagram1.SaveXml(saveFileDialog1.FileName);
+                        this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(saveFileDialog1.FileName);
+#endif
+                        break;
+                    case 2:
+                        diagram1.SaveBinary(saveFileDialog1.FileName);
+
+                        break;
+                    default:
+                        diagram1.SaveBinary(saveFileDialog1.FileName);
+                        break;
+                }
             }
         } 
         
         private void saveAsToolStripButton_Click(object sender, EventArgs e)
         {
             this.saveFileDialog1.FileName = "Diagram";
-            saveFileDialog1.Filter = @"EDD file(*.edd)|*.edd|XML file(*.xml)|*.xml|All files|*.*";
+            saveFileDialog1.Filter = @"XML file(*.xml)|*.xml|EDD file(*.edd)|*.edd|All files|*.*";
             saveFileDialog1.Title = "Save File As:";
             saveFileDialog1.FileName = "Diagram";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -502,12 +524,17 @@ namespace DatabaseDiagram
                 switch (saveFileDialog1.FilterIndex)
                 {
                     case 1:
-                        diagram1.SaveBinary(saveFileDialog1.FileName);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                        diagram1.SaveXml(saveFileDialog1.FileName);
+                        this.diagram1.Refresh();
+#else
+                        this.diagram1.SaveSoap(saveFileDialog1.FileName);
+#endif
                         break;
                     case 2:
-#if !NETCORE
-                        diagram1.SaveSoap(saveFileDialog1.FileName);
-#endif
+                        diagram1.SaveBinary(saveFileDialog1.FileName);
+
                         break;
                     default:
                         diagram1.SaveBinary(saveFileDialog1.FileName);
@@ -651,12 +678,16 @@ namespace DatabaseDiagram
             switch (index)
             {
                 case 1:
-                    diagram1.LoadBinary(filename);
+#if NETCORE || NET50 || NET80 || NET60 || NET70 || NET90 || SyncfusionFramework4_6_2 || SyncfusionFramework4_6 || SyncfusionFramework4_5_1 || SyncfusionFramework4_5
+
+                    diagram1.LoadXml(filename);
+                    this.diagram1.Refresh();
+#else
+                        this.diagram1.LoadSoap(filename);
+#endif
                     break;
                 case 2:
-#if !NETCORE
-                    diagram1.LoadSoap(filename);
-#endif
+                    diagram1.LoadBinary(filename);
                     break;
                 default:
                     diagram1.LoadBinary(filename);

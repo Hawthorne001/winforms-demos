@@ -44,10 +44,6 @@
       <HintPath>
       </HintPath>
     </Reference>
-    <Reference Include="Syncfusion.XlsIO.Windows">
-      <HintPath>
-      </HintPath>
-    </Reference>
     <Reference Include="Syncfusion.PivotAnalysis.Base">
       <HintPath>
       </HintPath>
